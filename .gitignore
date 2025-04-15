@@ -1,0 +1,22 @@
+# WordPress core (om du inte vill versionhantera WordPress i sig)
+wp-admin/
+wp-includes/
+license.txt
+readme.html
+
+# Uppladdningar (om du inte vill ha med bilder etc.)
+wp-content/uploads/
+
+# Temp och cache
+*.log
+*.tmp
+
+# Miljöfiler
+.env
+wp-config.php
+
+# Dockervolymer om du använder det
+db_data/
+
+#Språk
+wp-content/languages/
