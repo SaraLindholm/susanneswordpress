@@ -1,0 +1,29 @@
+
+/*
+Theme Name: susannes tavlor
+Author: Sara Lindholm
+Description: Tema för digitalt galleri.
+Version: 1.0
+*/
+
+
+
+* {
+	outline: none;
+}
+
+body {
+	background-color: #F1F0E8;
+}
+
+header {
+	background-color: #E5E1DA;
+}
+
+a {
+	color: B3C8CF;
+}
+
+	a:hover, a:active {
+		color: 89A8B2;
+	}
