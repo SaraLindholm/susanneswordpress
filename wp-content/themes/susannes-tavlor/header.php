@@ -16,6 +16,20 @@ include 'helper.php';
   <?php wp_body_open(); ?>
 
   <div id="wrap">
+  <nav id="nav">
+  <div class="container d-flex justify-content-end">
+        
+
+            <?php
+            wp_nav_menu([
+              'theme_location' => 'main_menu',
+              'menu_class' => 'menu',
+              'container' => false,
+            ]);
+            ?>
+
+      </div>
+    </nav>
     <header id="header">
       <div class="container">
         <div class="row">
@@ -29,31 +43,9 @@ include 'helper.php';
               <?php } ?>
             </a>
           </div>
-          <!--<div class="col-sm-6 hidden-xs">
-            <?php get_search_form(); ?>
-          </div>
-          <div class="col-xs-4 text-right visible-xs">
-            <div class="mobile-menu-wrap">
-              <i class="fa fa-search"></i>
-              <i class="fa fa-bars menu-icon"></i>
-            </div>
-          </div>-->
+
         </div>
       </div>
     </header>
-    <nav id="nav">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12">
-            <?php
-            wp_nav_menu([
-              'theme_location' => 'main_menu',
-              'menu_class' => 'menu',
-              'container' => false,
-            ]);
-            ?>
-          </div>
-        </div>
-      </div>
-    </nav>
+
   </div>
