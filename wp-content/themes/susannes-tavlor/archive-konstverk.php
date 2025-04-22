@@ -1,4 +1,9 @@
-<?php get_header(); ?>
+<?php
+/*
+Template Name: Gallerisida
+*/
+
+get_header(); ?>
 
 <main>
 

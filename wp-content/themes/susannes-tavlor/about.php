@@ -1,10 +1,16 @@
-<?php get_header(); ?>
+<?php
+/*
+Template Name: Om-sidan
+*/
+
+get_header(); ?>
 
 <main>
   <section class="intro">
     <h1>Välkommen till Susannes Tavlor</h1>
-    <p>Här hittar du unika konstverk – klicka gärna dig vidare för att läsa mer om varje tavla.</p>
+    <p>Om mig sidan
   </section>
+
   <section class="page-content">
     <?php
     if (have_posts()) :
@@ -14,6 +20,7 @@
     endif;
     ?>
   </section>
+</main>
 
 
 

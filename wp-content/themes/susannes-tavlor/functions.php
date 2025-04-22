@@ -12,7 +12,7 @@ function susannes_tavlor_enqueue_scripts() {
   wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css', false, '4.3.1', 'all');
 
   // Lägg till ditt eget tema CSS
-  wp_enqueue_style('theme-style', get_stylesheet_uri());
+  wp_enqueue_style('theme-style', get_template_directory_uri() . '/css/style.css');
 
   // Lägg till Bootstrap JS och dess beroende jQuery (måste vara i rätt ordning)
   wp_enqueue_script('jquery');
