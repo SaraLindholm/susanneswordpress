@@ -12,18 +12,17 @@ get_header(); ?>
   </section>
 
   <section class="page-content">
-    <?php
-    if (have_posts()) :
-      while (have_posts()) : the_post();
-        the_content();
-      endwhile;
-    endif;
-    ?>
+    <div class="contact-form">
+      <h2>Kontakta oss</h2>
+      <p>Fyll i formuläret nedan så hör vi av oss så snart som möjligt.</p>
+      <?php echo do_shortcode('[wpforms id="68" title="false" description="false"]'); ?>
+    </div>
   </section>
 </main>
 
 
 
-</main>
+<!-- https://wpforms.com/docs/how-to-properly-test-your-wordpress-forms-before-launching-checklist/
+ jag måste test validering osv av formuläret. samt kolla varför form Email inte är rätt ? -->
 
 <?php get_footer(); ?>

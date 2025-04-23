@@ -6,7 +6,7 @@
   <section>
     <div class="container">
       <div class="row">
-        <div id="primary" class="col-xs-12 col-md-9">
+      <div id="primary" class="col-xs-12 col-md-9 offset-md-1">
           <?php
 
           // Starta loopen

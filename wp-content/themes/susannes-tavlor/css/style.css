@@ -133,19 +133,19 @@ a:link {
 /* BLOGG
 ------------------------------------------------------------------ */
 
-#primary{
-  background-color: blue;
+.blog-post{
+  margin: 0 auto;
 }
-.row{
-  background-color: aqua;
-}
+
+
 article {
   background-color: white;
   border: solid 1px #ccc;
   border-bottom: solid 2px #333;
   padding: 20px;
   position: relative;
-  max-width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 article + article {
@@ -181,6 +181,17 @@ article .title {
   width: 150px;
   height: auto;
 }
+
+
+/* ----------------------------------------------------Contact */
+
+.contact-form{
+  max-width: 80%;
+  margin: 0 auto;
+
+};
+
+/*  */
 .side-menu {
   margin: 0;
   padding: 0;
