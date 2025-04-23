@@ -35,26 +35,8 @@ h1 {
   margin-bottom: 30px;
 }
 
-img {
-  max-width: 100%;
-}
-
 label {
   display: block;
-}
-
-input[type="text"],
-input[type="email"] {
-  display: block;
-  min-width: 200px;
-}
-
-input[type="submit"] {
-  display: block;
-}
-
-textarea {
-  min-width: 200px;
 }
 
 /* Header styles
@@ -102,7 +84,6 @@ textarea {
 
 #menu-navbar > li {
   line-height: 40px;
-
   list-style: none;
   margin-right: 10px;
   padding: 0 15px;
@@ -149,59 +130,13 @@ a:link {
 /* Main styles
 ------------------------------------------------------------------ */
 
-main {
-  padding: 40px 0;
-}
-
-.hero {
-  position: relative;
-}
-
-.hero .text {
-  color: white;
-  font-size: 22px;
-  left: 0;
-  margin: 0 auto;
-  position: absolute;
-  right: 0;
-  text-align: center;
-  text-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
-  top: 50%;
-  transform: translateY(-50%);
-  width: 66.66666667%;
-}
-
-.hero .text h1 {
-  font-size: 50px;
-}
-
-@media (max-width: 768px) {
-  .hero .text {
-    color: inherit;
-    font-size: 16px;
-    margin-top: 30px;
-    position: static;
-    text-shadow: none;
-    top: auto;
-    transform: none;
-    width: 100%;
-  }
-
-  .hero .text h1 {
-    font-size: 30px;
-  }
-}
-
-.welcome-text {
-  font-size: 22px;
-  margin-bottom: 20px;
-  margin-top: 50px;
-}
+/* BLOGG
+------------------------------------------------------------------ */
 
 article {
   background-color: white;
   border: solid 1px #ccc;
-  border-top: solid 2px #333;
+  border-bottom: solid 2px #333;
   padding: 30px;
   position: relative;
 }
@@ -219,59 +154,26 @@ article .title {
   margin-bottom: 10px;
 }
 
-article .meta {
-  margin: 0 0 10px;
-  overflow: hidden;
+.meta-data {
+  display: flex;
+  flex-wrap: wrap; /* Gör att det radbryts snyggt om det blir för långt */
+  gap: 1rem; /* Avstånd mellan <li> */
+  list-style: none; /* Ta bort prickarna */
   padding: 0;
-}
-
-article .meta > li {
-  float: left;
-  list-style: none;
-  margin-right: 15px;
-}
-
-article .meta > li > .fa {
-  margin-right: 5px;
-}
-
-article .categories {
   margin: 0;
-  overflow: hidden;
-  padding: 0;
+
 }
 
-article .categories > li {
-  float: left;
-  list-style: none;
-  margin-right: 15px;
+.meta-data li {
+  display: flex;
+  align-items: center; /* Justera ikon och text snyggt på samma rad */
+  gap: 0.3rem; /* Avstånd mellan ikon och text */
 }
-
-article .categories > li > a {
-  background-color: crimson;
-  border-radius: 3px;
-  color: white;
-  display: block;
-  font-size: 12px;
-  padding: 5px 10px;
+.wp-thumbnail {
+  margin-top: 1rem;
+  width: 150px;
+  height: auto;
 }
-
-@media (max-width: 768px) {
-  article .meta {
-    margin: 25px 0;
-  }
-
-  article .meta > li {
-    float: none;
-    margin-right: 0;
-  }
-
-  article .meta > li > .fa {
-    min-width: 20px;
-    text-align: center;
-  }
-}
-
 .side-menu {
   margin: 0;
   padding: 0;
@@ -283,58 +185,7 @@ article .categories > li > a {
   padding: 10px 0;
 }
 
-.searchform-wrap {
-  margin-bottom: 30px;
-}
-
-.searchform-wrap form {
-  overflow: hidden;
-}
-
-.searchform-wrap label {
-  float: left;
-  line-height: 30px;
-  margin-right: 10px;
-}
-
-.searchform-wrap input {
-  border-style: solid;
-  border-width: 1px;
-  height: 30px;
-  line-height: 30px;
-  float: left;
-  padding: 0 5px;
-}
-
-.searchform-wrap input[type="text"] {
-  border-color: #333;
-  margin-right: 10px;
-}
-
-.searchform-wrap input[type="submit"] {
-  background-color: crimson;
-  border-color: crimson;
-  color: white;
-  min-width: 50px;
-}
-
-@media (max-width: 768px) {
-  .searchform-wrap label {
-    display: block;
-    float: none;
-  }
-
-  .searchform-wrap input {
-    display: block;
-    float: none;
-  }
-
-  .searchform-wrap input[type="text"] {
-    margin-bottom: 10px;
-  }
-}
-
-.pagination {
+.se .pagination {
   margin: 30px 0 0;
   text-align: center;
   width: 100%;

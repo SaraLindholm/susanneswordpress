@@ -14,7 +14,6 @@
             while (have_posts()) : the_post();
           ?>
               <article>
-                <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
                 <h2 class="title"><?php the_title(); ?></h2>
                 <ul class="meta">
                   <li>
