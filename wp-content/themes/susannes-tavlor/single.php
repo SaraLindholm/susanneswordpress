@@ -15,7 +15,7 @@
           ?>
               <article>
                 <h2 class="title"><?php the_title(); ?></h2>
-                <ul class="meta">
+                <ul class="meta-data">
                   <li>
                     <i class="fa fa-calendar"></i><?php the_date(); ?>
                   </li>
@@ -37,6 +37,17 @@
                   </li>
                 </ul>
                 <p><?php the_content(); ?></p>
+                <ul class="meta-data">
+              <li>
+                <i class="fa-solid fa-tag"></i><?php
+                $tags = get_the_tags();
+                if (!empty ($tags)) {
+                  foreach ($tags as $tag) {
+                    echo '<a href="' . esc_url(get_tag_link($tag->term_id)) . '" rel="tag">' . esc_html($tag->name) . '</a> ';
+                  }
+                }?>
+              </li>
+            </ul>
               </article>
             <?php endwhile; ?>
 

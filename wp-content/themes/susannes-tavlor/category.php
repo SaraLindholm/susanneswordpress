@@ -5,8 +5,8 @@ get_header(); ?>
 
 <main>
   <h2>Välkommen till Susannes Tavlor</h2>
-  <p>home.php</p>
-  <p> lista över inlägg tänker jag? bloggsidan?</p>
+  <p>category.php</p>
+  <p> lista över kategorier?</p>
 </main>
 <section>
   <div class="row">

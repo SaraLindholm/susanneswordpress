@@ -133,12 +133,19 @@ a:link {
 /* BLOGG
 ------------------------------------------------------------------ */
 
+#primary{
+  background-color: blue;
+}
+.row{
+  background-color: aqua;
+}
 article {
   background-color: white;
   border: solid 1px #ccc;
   border-bottom: solid 2px #333;
-  padding: 30px;
+  padding: 20px;
   position: relative;
+  max-width: 100%;
 }
 
 article + article {
