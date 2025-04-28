@@ -40,8 +40,9 @@
 
           <div class="card-body">
             <a href="<?php the_permalink() ?>">
-              <h5 class="card-title"><?php the_title() ?></h5>
+              <p class="card-title"><?php the_title() ?></p>
               <p class="card-text"><?php the_date() ?></p>
+              <!-- <p class="card-text">ralala</p> -->
             </a>
           </div>
 
