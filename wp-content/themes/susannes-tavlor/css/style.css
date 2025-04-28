@@ -256,7 +256,7 @@ article .title {
   display: flex;
   justify-content: space-between;
   background-color: green;
-  gap: 20px;
+  gap: 50px;
   flex-wrap: wrap;
 }
 
@@ -265,7 +265,7 @@ article .title {
   flex-direction: row;
   border: 1px solid #585858;
   padding: 15px;
-  width: 32%; /* Tre kort per rad */
+  width: 22%; /* Tre kort per rad */
   box-sizing: border-box;
   background-color: tomato;
 
