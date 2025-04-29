@@ -255,9 +255,9 @@ article .title {
 .footer-cards{
   display: flex;
   justify-content: space-between;
-  background-color: green;
-  gap: 50px;
   flex-wrap: wrap;
+  background-color: green;
+  gap: 10px;
 }
 
 .card-container{
@@ -265,7 +265,7 @@ article .title {
   flex-direction: row;
   border: 1px solid #585858;
   padding: 15px;
-  width: 22%; /* Tre kort per rad */
+  width: 30%; /* Tre kort per rad */
   box-sizing: border-box;
   background-color: tomato;
 
@@ -292,8 +292,41 @@ article .title {
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   #footer h4 {
     margin-top: 20px;
   }
+
+.card-container{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  box-sizing: border-box;
+/*   background-color: tomato; */
+  height: 150px;
+
+}
+
+.card-image{
+  width: 35%;
+  height: 100%;
+  margin-bottom: 10px;
+/*   background-color: blueviolet; */
+
+}
+.card-image img {
+  width: 90%;
+  object-fit: contain;
+  display: block;
+  height: 90%;
+  border-radius: 8px;
+}
+
+.card-body{
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
 }
