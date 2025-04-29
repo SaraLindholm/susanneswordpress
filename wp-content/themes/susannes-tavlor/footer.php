@@ -1,11 +1,8 @@
 <footer id="footer">
-  <section id="content">
-    <div>
-      <p>ArtBySusanne25 &copy; <?php echo date('Y'); ?></p>
-    </div>
-  </section>
-  <h4>Senaste inläggen</h4>
+
+<h4>Senaste inläggen</h4>
   <section class="footer-cards">
+
 
     <?php
     $reccent_posts = new WP_Query([
@@ -55,6 +52,11 @@
       ?>
       <p>Inga inlägg att visa</p>
     <?php endif; ?>
+  </section>
+  <section id="content">
+    <div>
+      <p>ArtBySusanne25 &copy; <?php echo date('Y'); ?></p>
+    </div>
   </section>
 
 </footer>
