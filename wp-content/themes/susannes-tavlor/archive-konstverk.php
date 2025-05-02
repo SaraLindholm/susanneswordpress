@@ -7,30 +7,60 @@ get_header(); ?>
 
 <main>
 
+
   <p>Detta är arkive-kontverk (galleri).</p>
   <p>archive-konstverk.php</p>
-  <!-- Exempel på hur du kan loopa ut några tavlor om du har en CPT -->
+
   <?php
   $args = array(
-    'post_type' => 'tavla', // ändra till rätt CPT-slug
-    'posts_per_page' => 3,
+    'post_type' => 'tavla',
+    'posts_per_page' => 12,
   );
   $query = new WP_Query($args);
+
   if ($query->have_posts()) : ?>
     <section class="tavlor-preview">
       <h2>Senaste tavlor</h2>
       <div class="tavlor-wrapper">
         <?php while ($query->have_posts()) : $query->the_post(); ?>
           <article class="tavla">
-            <h3><?php the_title(); ?></h3>
+
+          <?php
+          $tillganglighet = get_field('tillganglighet');
+          $matt = get_field('matt');
+          $pris = get_field('pris');
+          ?>
+
+
             <?php if (has_post_thumbnail()) {
               the_post_thumbnail('medium');
             } ?>
-            <p><a href="<?php the_permalink(); ?>">Läs mer</a></p>
+             <h3><?php the_title(); ?></h3>
+
+             <?php if($matt): ?>
+              <h5>Mått:</h5><?= esc_html($matt);?>
+              <?php endif; ?>
+
+              <?php if($pris): ?>
+                <?= esc_html($pris);?> <h5>SEK</h5>
+                <?php endif; ?>
+
+              <?php if($tillganglighet): ?>
+                <h5>Tillgänglighet:</h5><?= esc_html($tillganglighet);?>
+                <?php endif; ?>
+
+              <p><a href="<?php the_permalink(); ?>">Läs mer</a></p>
           </article>
-        <?php endwhile; ?>
+          <?php endwhile; ?>
+
       </div>
     </section>
+
+
+
+
+
+
 
     <h1>category.HTML</h1>
         <div class="row row-cols-1 row-cols-md-4 g-4">
@@ -86,8 +116,17 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-    </main>
-  <?php endif; wp_reset_postdata(); ?>
+
+        <?php
+  else :
+    echo '<p>Inga konstverk hittades.</p>';
+  endif;
+
+  // Återställ postdata
+  wp_reset_postdata();
+  ?>
 </main>
 
-<?php get_footer(); ?>
+
+
+  <?php get_footer();?>
