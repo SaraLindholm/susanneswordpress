@@ -12,7 +12,7 @@ body {
 }
 
 body {
-  background-color: #f0ebe3;
+  background-color: #f6f5f2;
 }
 
 a {
@@ -43,7 +43,7 @@ label {
 ------------------------------------------------------------------ */
 
 #wrap {
-  background-color: #f6f5f2;
+  background-color: #f0ebe3;
   min-height: 60px;
 }
 #header {
@@ -93,7 +93,7 @@ label {
 }
 
 #menu-navbar > li.current-menu-item {
-  background-color: #f0ebe3;
+  background-color: #f6f5f2;
   border-radius: 5px;
 }
 
@@ -233,7 +233,7 @@ article .title {
 
 #footer {
   padding: 10px 0;
-  background-color: #f6f5f2;
+  background-color: #f0ebe3;
 
 
 }
