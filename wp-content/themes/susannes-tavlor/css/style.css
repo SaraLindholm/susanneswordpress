@@ -324,3 +324,13 @@ article .title {
     justify-content: center;
   }
 }
+
+
+.status-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}

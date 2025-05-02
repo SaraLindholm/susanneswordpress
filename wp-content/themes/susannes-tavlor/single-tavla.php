@@ -32,16 +32,16 @@
              <h3><?php the_title(); ?></h3>
 
              <?php if($matt): ?>
-              <h5>Mått:</h5><?= esc_html($matt);?>
-              <?php endif; ?>
+              <p><strong>Mått: </strong><?= esc_html($matt);?>
+              <?php endif; ?></p>
 
               <?php if($pris): ?>
-                <?= esc_html($pris);?> <h5>SEK</h5>
-                <?php endif; ?>
+                <p><strong>Pris: </strong><?= esc_html($pris);?> SEK
+                <?php endif; ?></p>
 
               <?php if($tillganglighet): ?>
-                <h5>Tillgänglighet:</h5><?= esc_html($tillganglighet);?>
-                <?php endif; ?>
+                <p><strong>Tillgänglighet: </strong><?= esc_html($tillganglighet);?>
+                <?php endif; ?></p>
 
               <p><a href="<?php the_permalink(); ?>">Läs mer</a></p>
           </article>
