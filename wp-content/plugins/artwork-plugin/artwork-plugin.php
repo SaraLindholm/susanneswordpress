@@ -58,5 +58,8 @@ function tavel_post_type() {
 	);
 	register_post_type( 'tavla', $args );
 
+	register_taxonomy_for_object_type( 'category', 'tavla' );
+	register_taxonomy_for_object_type( 'post_tag', 'tavla' );
+
 }
 add_action( 'init', 'tavel_post_type', 0 );

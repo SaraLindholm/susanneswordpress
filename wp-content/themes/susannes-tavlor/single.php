@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 
 <main>
-  <h2>Välkommen till Susannes Tavlor</h2>
   <p>single.php</p>
   <section>
     <div class="container">

@@ -1,3 +1,4 @@
+
 <?php
 
 
@@ -6,8 +7,8 @@ get_header(); ?>
 <main>
 
 
-  <p>Detta är arkive-kontverk (galleri).</p>
-  <p>archive-konstverk.php</p>
+
+  <p>taxonomy-post_tag-tavla.php</p>
 
   <?php
   $args = array(
@@ -17,9 +18,9 @@ get_header(); ?>
   $query = new WP_Query($args);
 
   if ($query->have_posts()) : ?>
-    <section class="tavlor-preview">
+    <section>
       <h2>Senaste tavlor</h2>
-      <div class="tavlor-wrapper">
+      <div
         <?php while ($query->have_posts()) : $query->the_post(); ?>
           <article class="tavla">
 
@@ -29,11 +30,10 @@ get_header(); ?>
           $pris = get_field('pris');
           ?>
 
-          <div id="imageTODO">
-            <!-- fixa korrekt styling för bild här me bla skugga -->
+
             <?php if (has_post_thumbnail()) {
               the_post_thumbnail('medium');
-            } ?></div>
+            } ?>
              <h3><?php the_title(); ?></h3>
 
              <?php if($matt): ?>
@@ -44,7 +44,9 @@ get_header(); ?>
                 <p><strong>Pris: </strong><?= esc_html($pris);?> SEK
                 <?php endif; ?></p>
 
-                            <?php if ($tillganglighet): ?>
+
+
+                <?php if ($tillganglighet): ?>
               <div class="tillganglighet-status">
                 <?php
                 $color = '';
@@ -70,7 +72,7 @@ get_header(); ?>
               </div>
             <?php endif; ?>
 
-<a href="<?php the_permalink(); ?>">Till tavlan</a>
+            <button type="button"><a href="<?php the_permalink(); ?>">Till tavlan</a></button>
           </article>
           <?php endwhile; ?>
 
