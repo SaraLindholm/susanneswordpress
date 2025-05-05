@@ -70,7 +70,8 @@ get_header(); ?>
               </div>
             <?php endif; ?>
 
-<a href="<?php the_permalink(); ?>">Till tavlan</a>
+
+<a href="<?php the_permalink(); ?>" class="btn btn-outline-primary" id="button">TILL TAVLAN</a>
           </article>
           <?php endwhile; ?>
 
