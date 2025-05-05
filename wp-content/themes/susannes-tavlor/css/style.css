@@ -138,9 +138,8 @@ a:link {
 }
 
 article {
-  background-color: white;
+  background-color:white;
   border: solid 1px #ccc;
-/*   border-bottom: solid 2px #333; */
   padding: 20px;
   position: relative;
   max-width: 90%;
@@ -179,12 +178,84 @@ article .title {
   width: 150px;
   height: auto;
 }
+
+
+
+/*------------------------------------------Tavel arkiv */
+
+.tavlor-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  background-color: rgb(171, 171, 218);
+}
+
+.tavlor-wrapper {
+  margin: 0 auto;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(25, 25, 58);
+  gap: 1rem;
+}
+
+.tavlor-wrapper article {
+  margin: 20px;
+  background-color: rgb(196, 175, 175);
+}
+
+
+article img {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  margin-bottom: 30px;
+}
+
+article .title {
+  margin-bottom: 10px;
+}
+
+.meta-data {
+  display: flex;
+  flex-wrap: wrap; /* Gör att det radbryts snyggt om det blir för långt */
+  gap: 1rem; /* Avstånd mellan <li> */
+  list-style: none; /* Ta bort prickarna */
+  padding: 0;
+  margin: 0;
+}
+
+.meta-data li {
+  display: flex;
+  align-items: center; /* Justera ikon och text snyggt på samma rad */
+  gap: 0.3rem; /* Avstånd mellan ikon och text */
+}
+.wp-thumbnail {
+  margin-top: 1rem;
+  width: 150px;
+  height: auto;
+}
+
+#button-bottom{
+  margin: 0 auto;
+  display: flex;
+  margin-top: 30px;
+  width: 100%;
+  justify-content: center;
+ }
+
+
+
+/* Tavla arkiv */
+
+
+
 /*------------------------------------------Single Tavla */
- #button-wrapper{
+ .button-wrapper{
   margin: 0 auto;
   display: flex;
   margin: 10px;
-
   width: 100%;
   justify-content: center;
  }
@@ -197,7 +268,9 @@ article .title {
 .tavla-wrapper {
   margin: 0 auto;
   width: 80%;
+  height: 100%;
   display: flex;
+  background-color: blue;
 }
 
 #section-left {
@@ -212,17 +285,32 @@ article .title {
 
 #section-right {
   width: 50%;
+  height: 50vh;
   padding: 20px;
   box-sizing: border-box;
+  display: flex;
+ justify-content: center;
+  align-items: center;
+
+}
+
+.tavla{
+  background-color:rgb(97, 42, 42);
+  border: solid 1px #ccc;
+  padding: 20px;
+  position: relative;
+  max-width: 90%;
+  width: auto;
 }
 
 #image {
   width: 100%;
   height: auto;
+  background-color: aqua;
 }
 
 #image img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   display: block;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);

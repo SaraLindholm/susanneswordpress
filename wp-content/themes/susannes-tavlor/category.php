@@ -6,7 +6,9 @@ get_header(); ?>
 <main>
   <h2>Välkommen till Susannes Tavlor</h2>
   <p>category.php</p>
-  <p> lista över kategorier?</p>
+  <p>Kategori: <?php
+$category = get_queried_object();
+echo '<h1>' . esc_html($category->name) . '</h1>';?></p>
 </main>
 <section>
   <div class="row">
@@ -39,7 +41,7 @@ get_header(); ?>
                 ?>
               </li>
             </ul>
-            <p>
+            <p class="wp-thumbnail">
               <?php
               if (has_post_thumbnail()) {
                 the_post_thumbnail('thumbnail', ['alt' => get_the_title()]);

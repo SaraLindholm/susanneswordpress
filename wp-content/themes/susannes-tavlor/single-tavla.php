@@ -9,11 +9,15 @@
     <div class="tavla-wrapper">
       <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
           <div id="section-left">
-            <div id="image"><?php if (has_post_thumbnail()) {
-                              the_post_thumbnail('large');
-                            } ?></div>
+            <div id="image">
+            <?php if (has_post_thumbnail()) {?>
+                <img class="rounded" src="<?php the_post_thumbnail_url('large'); ?>" alt="Bild med titel: <?php the_title(); ?>"><?php
+
+              } ?>
+
+                          </div>
           </div>
-          <div id="section-right">BOX2
+          <div id="section-right">
             <article class="tavla">
 
               <?php
@@ -98,7 +102,7 @@
                     </li>
                   </ul>
 
-                  <div id="button-wrapper">
+                  <div class="button-wrapper">
                     <div id="button"><a href="<?php the_permalink(); ?>" class="btn btn-dark btn-lg">KONTAKTA MIG FÖR INKÖP</a>
                     </div>
                   </div>

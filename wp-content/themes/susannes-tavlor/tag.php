@@ -5,8 +5,9 @@ get_header(); ?>
 
 <main>
   <h2>Välkommen till Susannes Tavlor</h2>
-  <p>tag.php</p>
-  <p> lista över taggar?</p>
+  <p>Tag: <?php
+$tag = get_queried_object();
+echo '<h1>' . esc_html($tag->name) . '</h1>';?></p>
 </main>
 <section>
   <div class="row">
