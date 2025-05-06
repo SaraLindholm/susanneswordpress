@@ -15,10 +15,20 @@ include 'helper.php';
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
 
-  <div id="wrap">
+  <header id="wrap">
   <nav id="nav">
   <div class="container d-flex justify-content-end">
-        
+ <div class="col-xs-6 col-sm-4">
+  <!-- TODO fixa så att "loggan" ligger i rött höjd och att den lägger sig en rad ovan för navbaren i smalt lge -->
+  <a class="logo" href="<?php echo home_url(); ?>">
+              <?php if (has_custom_logo()) {
+                the_custom_logo();
+              } else { ?>
+                <?php bloginfo('name'); ?>
+              <?php } ?>
+            </a>
+            </div>
+
 
             <?php
             wp_nav_menu([
@@ -30,22 +40,15 @@ include 'helper.php';
 
       </div>
     </nav>
-    <header id="header">
+      <!--    <header id="header">
       <div class="container">
         <div class="row">
           <div class="col-xs-8 col-sm-6">
-            <!-- Om du vill använda en bild som logotyp, ersätt texten med en bild -->
-            <a class="logo" href="<?php echo home_url(); ?>">
-              <?php if (has_custom_logo()) {
-                the_custom_logo();
-              } else { ?>
-                <?php bloginfo('name'); ?>
-              <?php } ?>
-            </a>
+
           </div>
 
         </div>
       </div>
-    </header>
+    </header> -->
 
-  </div>
+          </header>

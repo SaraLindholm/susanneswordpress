@@ -44,42 +44,70 @@ label {
 
 #wrap {
   background-color: #d4c6af;
-  height: 100px;
-}
-#header {
-  height: 70px;
+  height: 200px;
+  width: 100%;
+
 }
 
-#header .logo {
+
+ .logo {
   font-size: 2.2rem;
   line-height: 70px;
   font-family: karla;
 }
 
-@media (max-width: 768px) {
-  #header {
-    height: 40px;
+
+@media (max-width: 600px) {
+  #wrap {
+    height: 300px;
+    background-color: rgb(23, 85, 64);
   }
 
-  #header .logo {
+  #nav .menu {
+    margin: 0 -15px;
+  }
+
+  #nav .menu > li {
+    float: none;
+    width: 100%;
+  }
+  #menu-navbar {
+    background-color: rgb(255, 127, 159);
+    list-style: none; /* Ta bort punkter från listan */
+    display: flex;
+    flex-direction: column; /* Gör så att länkarna ligger på rad */
+    justify-content: flex-start;
+    gap: 0.5rem; /* Mellanrum mellan länkar */
+}
+
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+  #wrap {
+    height: 250px;
+    background-color: aquamarine;
+  }
+
+  .logo {
     font-size: 2.2rem;
     line-height: 70px;
     font-family: karla;
   }
 }
 
-#nav {
+/* #nav {
   height: 40px;
   padding-top: 30px;
-}
+} */
 
 #menu-navbar {
   list-style: none; /* Ta bort punkter från listan */
   margin: 0;
   padding: 0;
-  display: flex; /* Gör så att länkarna ligger på rad */
-  justify-content: flex-end; /* Justera menyn till höger */
-  gap: 2rem; /* Mellanrum mellan länkar */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
 }
 
 #menu-navbar > li {
@@ -111,21 +139,6 @@ a:link {
   border-radius: 5px;
 }
 
-@media (max-width: 768px) {
-  #nav {
-    display: none;
-    height: auto;
-  }
-
-  #nav .menu {
-    margin: 0 -15px;
-  }
-
-  #nav .menu > li {
-    float: none;
-    width: 100%;
-  }
-}
 
 /* Main styles
 ------------------------------------------------------------------ */
