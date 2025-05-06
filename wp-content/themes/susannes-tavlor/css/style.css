@@ -49,13 +49,22 @@ label {
 
 }
 
-
  .logo {
   font-size: 2.2rem;
   line-height: 70px;
   font-family: karla;
 }
 
+/* utan mediaquery */
+#menu-navbar {
+  background-color: rgb(255, 127, 159);
+  list-style: none; /* Ta bort punkter från listan */
+  display: flex;
+  flex-direction: row; /* Gör så att länkarna ligger på rad */
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1,2rem; /* Mellanrum mellan länkar */
+}
 
 @media (max-width: 600px) {
   #wrap {
@@ -93,22 +102,20 @@ label {
     line-height: 70px;
     font-family: karla;
   }
+  #menu-navbar {
+    background-color: seagreen;
+    list-style: none; /* Ta bort punkter från listan */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.5rem; /* Mellanrum mellan länkar */
+  }
 }
 
-/* #nav {
-  height: 40px;
-  padding-top: 30px;
-} */
 
-#menu-navbar {
-  list-style: none; /* Ta bort punkter från listan */
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
 
-}
 
 #menu-navbar > li {
   line-height: 40px;
@@ -138,6 +145,7 @@ a:link {
   color: darkred;
   border-radius: 5px;
 }
+
 
 
 /* Main styles
@@ -189,7 +197,7 @@ article .title {
 }
 
 /* finns både i bloggen men också på tavlor */
-.wp-thumbnail {
+  .wp-thumbnail {
   margin-top: 1rem;
   width: 150px;
   height: auto;
@@ -247,7 +255,7 @@ article .title {
   gap: 0.3rem; /* Avstånd mellan ikon och text */
 }
 .wp-thumbnail {
-  margin-top: 1rem;
+/*   margin-top: 1rem; */
   width: 150px;
   height: auto;
 }
@@ -434,11 +442,11 @@ article .title {
   width: 100%;
   display: flex;
   flex-direction: column;
-  max-height: 300px;
+  height: 300px;
   align-items: center;
 }
 
-#content {
+#copyright {
   margin-top: 10px;
   width: 100%;
   display: flex;
@@ -448,9 +456,9 @@ article .title {
 
 .footer-cards {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 2.5rem;
   padding: 0 20px;
 }
 
@@ -475,7 +483,7 @@ article .title {
   border-radius: 8px;
 }
 
-.card-body {
+.card-text {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -487,9 +495,17 @@ article .title {
 }
 
 @media (max-width: 600px) {
+
+#footer {
+  padding: 10px 0;
+  background-color: #d4c6af;
+  width: 100%;
+  display: flex;
+  height: 450px;
+  align-items: center;
+}
   #footer h4 {
-    margin-top: 20px;
-    margin-left: 20px;
+    margin-top: 10px;
   }
 
   .card-container {
@@ -497,25 +513,28 @@ article .title {
     flex-direction: row;
     width: 100%;
     box-sizing: border-box;
-
-    height: 150px;
+    height: 90px;
   }
 
   .card-image {
-    width: 35%;
+    width: 45%;
     height: 100%;
-    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
 
+/* TODO jobba på stylingen med bild i footern på breda skärmar */
   }
   .card-image img {
-    width: 90%;
-    object-fit: contain;
-    display: block;
-    height: 90%;
+
+    width: auto;
+
+    display: flex;
+    height: 100%;
     border-radius: 8px;
   }
 
-  .card-body {
+  .card-text {
     flex-direction: column;
     align-items: center;
     justify-content: center;

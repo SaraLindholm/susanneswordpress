@@ -24,18 +24,18 @@
                 $content = get_the_content();
                 preg_match('/<img.+src=[\'"](?P<src>.+?)[\'"].*>/i', $content, $image);
                 if (!empty($image['src'])) {
-                  echo '<img class="wp-thumbnail" src="'  . esc_url($image['src']) . '" alt="' . esc_attr(get_the_title()) . '">';
+                  echo '<img src="'  . esc_url($image['src']) . '" alt="' . esc_attr(get_the_title()) . '">';
                 } else {
                   // Här är den rätta vägen till din standardbild i temamappen
                   $default_image_url = esc_url(get_template_directory_uri() . '/images/no-image.png');
-                  echo '<img class="wp-thumbnail" src="' . $default_image_url . '" alt="Standardbild">';
+                  echo '<img src="' . $default_image_url . '" alt="Standardbild">';
 
                 }
               }
               ?>
           </div>
 
-          <div class="card-body">
+          <div class="card-text">
             <a href="<?php the_permalink() ?>">
               <p class="card-title"><?php the_title() ?></p>
               <p class="card-text"><?php the_date() ?></p>
@@ -53,7 +53,8 @@
       <p>Inga inlägg att visa</p>
     <?php endif; ?>
   </section>
-  <section id="content">
+
+  <section id="copyright">
     <div>
       <p>ArtBySusanne25 &copy; <?php echo date('Y'); ?></p>
     </div>
