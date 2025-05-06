@@ -23,10 +23,7 @@ get_header(); ?>
               <li>
                 <i class="fa-solid fa-calendar"></i><?php echo get_the_date(); ?>
               </li>
-              <li>
-                <i class="fa-solid fa-user"></i>
-                <?php echo get_the_author_posts_link(); ?>
-              </li>
+
               <li>
                 <i class="fa-solid fa-list"></i>
                 <?php
@@ -39,7 +36,7 @@ get_header(); ?>
                 ?>
               </li>
             </ul>
-            <p>
+            <p class="wp-thumbnail">
               <?php
               if (has_post_thumbnail()) {
                 the_post_thumbnail('thumbnail', ['alt' => get_the_title()]);

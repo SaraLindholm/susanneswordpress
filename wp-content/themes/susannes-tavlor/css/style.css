@@ -21,7 +21,7 @@ a {
 
 a:hover,
 a:active {
-  color: darkred;
+  color: rgb(88, 72, 72);
 }
 
 h1,
@@ -43,8 +43,8 @@ label {
 ------------------------------------------------------------------ */
 
 #wrap {
-  background-color: #f0ebe3;
-  min-height: 60px;
+  background-color: #d4c6af;
+  height: 100px;
 }
 #header {
   height: 70px;
@@ -138,12 +138,13 @@ a:link {
 }
 
 article {
-  background-color:white;
+  background-color: #d4c6af93;
   border: solid 1px #ccc;
   padding: 20px;
   position: relative;
   max-width: 90%;
   margin: 0 auto;
+  margin-bottom: 30px;
 }
 
 article + article {
@@ -173,6 +174,8 @@ article .title {
   align-items: center; /* Justera ikon och text snyggt på samma rad */
   gap: 0.3rem; /* Avstånd mellan ikon och text */
 }
+
+/* finns både i bloggen men också på tavlor */
 .wp-thumbnail {
   margin-top: 1rem;
   width: 150px;
@@ -189,7 +192,7 @@ article .title {
   justify-content: center;
   margin: 0 auto;
   width: 100%;
-  background-color: rgb(171, 171, 218);
+
 }
 
 .tavlor-wrapper {
@@ -198,13 +201,12 @@ article .title {
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
-  background-color: rgb(25, 25, 58);
   gap: 1rem;
 }
 
 .tavlor-wrapper article {
   margin: 20px;
-  background-color: rgb(196, 175, 175);
+  background-color: #d4c6af93;
 }
 
 
@@ -270,7 +272,7 @@ article .title {
   width: 80%;
   height: 100%;
   display: flex;
-  background-color: blue;
+
 }
 
 #section-left {
@@ -295,7 +297,7 @@ article .title {
 }
 
 .tavla{
-  background-color:rgb(97, 42, 42);
+  background-color: #d4c6af93;
   border: solid 1px #ccc;
   padding: 20px;
   position: relative;
@@ -306,7 +308,6 @@ article .title {
 #image {
   width: 100%;
   height: auto;
-  background-color: aqua;
 }
 
 #image img {
@@ -416,9 +417,12 @@ article .title {
 
 #footer {
   padding: 10px 0;
-  background-color: #f0ebe3;
-
-
+  background-color: #d4c6af;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  max-height: 300px;
+  align-items: center;
 }
 
 #content {
@@ -433,7 +437,6 @@ article .title {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  /* background-color: green; */
   gap: 10px;
   padding: 0 20px;
 }
@@ -443,17 +446,15 @@ article .title {
   flex-direction: row;
   border: 1px solid #585858;
   border-radius: 7px;
-
-  width: 30%; /* Tre kort per rad */
+  width: 20%; /* Tre kort per rad */
   box-sizing: border-box;
-  /*  background-color: tomato; */
 }
 
 .card-image {
   width: 35%;
   height: auto;
   margin-right: 10px;
-  /*   background-color: aquamarine; */
+
 }
 .card-image img {
   width: 100%;
@@ -483,7 +484,7 @@ article .title {
     flex-direction: row;
     width: 100%;
     box-sizing: border-box;
-    /*   background-color: tomato; */
+
     height: 150px;
   }
 
@@ -491,7 +492,7 @@ article .title {
     width: 35%;
     height: 100%;
     margin-bottom: 10px;
-    /*   background-color: blueviolet; */
+
   }
   .card-image img {
     width: 90%;
