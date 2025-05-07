@@ -25,6 +25,7 @@
               $matt = get_field('matt');
               $pris = get_field('pris');
               $beskrivning = get_field('beskrivning');
+              $tagg = get_field('tagg');
               ?>
               <p>
                 <a href="<?php echo home_url('/galleri'); ?>">
@@ -77,8 +78,14 @@
                 <?php if ($pris): ?>
                   <p><b>SEK <?= esc_html($pris); ?></b></p>
                 <?php endif; ?></p>
+                tagg
+                <?php if ($tagg): ?>
+                  <p><b>Tagg: <?= esc_html($tagg); ?></b></p>
+                <?php endif; ?></p>
 
-
+                <?php
+echo get_the_term_list( get_the_ID(), 'tagg', '<p class="tavla-taggar">Taggar: ', ', ', '</p>' );
+?>
 
                 <ul class="meta-data">
 

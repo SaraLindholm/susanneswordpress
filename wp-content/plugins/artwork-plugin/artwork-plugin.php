@@ -3,7 +3,31 @@
 Plugin Name: Plugin for Tavlor
 Description: A plugin to display artwork posts with a custom layout.
 */
+// Registrera den anpassade taxonomin "tagg" för tavlor
+function tavel_register_tagg_taxonomy() {
+	$labels = array(
+			'name'              => _x( 'Taggar', 'taxonomy general name' ),
+			'singular_name'     => _x( 'Tagg', 'taxonomy singular name' ),
+			'search_items'      => __( 'Sök taggar' ),
+			'all_items'         => __( 'Alla taggar' ),
+			'edit_item'         => __( 'Redigera tagg' ),
+			'update_item'       => __( 'Uppdatera tagg' ),
+			'add_new_item'      => __( 'Lägg till ny tagg' ),
+			'new_item_name'     => __( 'Nytt taggnamn' ),
+			'menu_name'         => __( 'Taggar' ),
+	);
 
+	$args = array(
+			'hierarchical'      => false, // false = fungerar som vanliga taggar (inte kategorier)
+			'labels'            => $labels,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'rewrite'           => array( 'slug' => 'tagg' ),
+	);
+
+	register_taxonomy( 'tagg', array( 'tavla' ), $args );
+}
+add_action( 'init', 'tavel_register_tagg_taxonomy' );
 
 function tavel_post_type() {
 
@@ -41,7 +65,7 @@ function tavel_post_type() {
 		'description'           => __( 'Sida för Tavlor', 'text_domain' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'thumbnail', 'comments', 'custom-fields' ),
-		'taxonomies'            => array( 'category', 'post_tag' ),
+		'taxonomies'            => array( 'category', 'post_tag', 'tagg' ),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
@@ -59,7 +83,7 @@ function tavel_post_type() {
 	register_post_type( 'tavla', $args );
 
 	register_taxonomy_for_object_type( 'category', 'tavla' );
-	register_taxonomy_for_object_type( 'post_tag', 'tavla' );
+	register_taxonomy_for_object_type( 'tagg', 'tavla' );
 
 }
 add_action( 'init', 'tavel_post_type', 0 );

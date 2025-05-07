@@ -1,30 +1,17 @@
 <?php
-
-
 get_header(); ?>
 
 <main>
+  <p>taxonomy-tagg.php</p>
+  <h2>Tagg: <?php single_term_title(); ?></h2>
 
 
-  <p>  <h2>Tavlor</h2></p>
-  <p>archive-konstverk.php</p>
-
-  <?php
-  $args = array(
-    'post_type' => 'tavla',
-    'posts_per_page' => 22,
-  );
-  $query = new WP_Query($args);
-
-  if ($query->have_posts()) : ?>
-
-  
-    <section class="tavlor-container">
-      <div class="tavlor-wrapper">
-        <?php while ($query->have_posts()) : $query->the_post(); ?>
-          <article class="tavla-archive">
-
-            <?php
+<?php if ( have_posts() ) : ?>
+  <section class="tavlor-tagg-container">
+  <div class="tavlor-wrapper">
+    <?php while ( have_posts() ) : the_post(); ?>
+    <article class="tavla-archive">
+    <?php
             $tillganglighet = get_field('tillganglighet');
             $matt = get_field('matt');
             $pris = get_field('pris');
@@ -79,24 +66,20 @@ get_header(); ?>
                 <div class="button-wrapper">
                 <a href="<?php the_permalink(); ?>" class="btn-view-tavla" id="button">TILL TAVLAN</a></div>
 
-          </article>
-        <?php endwhile; ?>
-
-      </div>
-    </section>
 
 
 
+    </article>
 
+    <?php endwhile; ?>
+    </div>
 
+</section>
+<?php else : ?>
+  <p>Inga tavlor hittades under denna tagg.</p>
+<?php endif; ?>
 
-
-  <?php
-  else :
-    echo '<p>Inga konstverk hittades.</p>';
-  endif;
-
-  // Återställ postdata
+<?php
   wp_reset_postdata();
   ?>
 </main>
