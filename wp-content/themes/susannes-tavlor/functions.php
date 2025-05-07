@@ -36,5 +36,5 @@ add_action('wp_enqueue_scripts', 'susannes_tavlor_enqueue_scripts');
 
 //påverka längd och style för sammanfattningen av inlägg
 add_filter('excerpt_more', function () {
-  return '<a class="excerpt-more" style="color: gray;" href="' . get_permalink() . '"> [...Läs mer]</a>';
+  return '<a class="excerpt-more" style="color: red;" href="' . get_permalink() . '"> [...Läs mer]</a>';
 });

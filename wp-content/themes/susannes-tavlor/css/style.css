@@ -21,7 +21,7 @@ a {
 
 a:hover,
 a:active {
-  color: rgb(88, 72, 72);
+  color: rgb(58, 47, 47);
 }
 
 h1,
@@ -158,7 +158,7 @@ a:link {
   margin: 0 auto;
 }
 
-article {
+article.blogg-post {
   background-color: #d4c6af93;
   border: solid 1px #ccc;
   padding: 20px;
@@ -225,15 +225,27 @@ article .title {
   gap: 1rem;
 }
 
+article.tavla-archive {
+  background-color: #d4c6af93;
+  border: solid 1px #ccc;
+  padding: 20px;
+  position: relative;
+  max-width: 90%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
 .tavlor-wrapper article {
   margin: 20px;
   background-color: #d4c6af93;
 }
 
 
-article img {
+article.tavla-archive img {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
   margin-bottom: 30px;
+  max-height: 225px;
+  max-width: 250px;
 }
 
 article .title {
@@ -260,15 +272,13 @@ article .title {
   height: auto;
 }
 
-#button-bottom{
-  margin: 0 auto;
-  display: flex;
-  margin-top: 30px;
-  width: 100%;
-  justify-content: center;
+
+ .btn-view-tavla{
+
+  color: white;
+  font-family: Abyssinica SIL;
+  font-size: 1rem;
  }
-
-
 
 /* Tavla arkiv */
 
@@ -277,15 +287,46 @@ article .title {
 /*------------------------------------------Single Tavla */
  .button-wrapper{
   margin: 0 auto;
+  margin-top: 10px;
   display: flex;
-  margin: 10px;
   width: 100%;
   justify-content: center;
+  background-color: black;
+  border-radius: 5px;
  }
 
- #button {
- font-family: Abyssinica SIL;
+ .disabled-button-wrapper{
+  margin: 0 auto;
+  margin-top: 10px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  pointer-events: none;     /* Gör så att länken inte kan klickas */
+  background-color: #ccc;   /* Grå bakgrund */
+  color: #666;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
  }
+
+
+ .button-wrapper:hover,
+ .button-wrapper:active {
+  color: rgb(207, 190, 190);
+  background-color: rgb(75, 72, 72);
+}
+
+
+ .btn-buy-tavla{
+  color: white;
+  font-family: Abyssinica SIL;
+  font-size: 1rem;
+ }
+
+ .btn-buy-tavla:hover,
+ .btn-buy-tavla:active {
+  color: rgb(207, 190, 190);
+  background-color: rgb(75, 72, 72);
+}
 
 
 .tavla-wrapper {
@@ -318,7 +359,7 @@ article .title {
 }
 
 .tavla{
-  background-color: #d4c6af93;
+
   border: solid 1px #ccc;
   padding: 20px;
   position: relative;
@@ -329,6 +370,7 @@ article .title {
 #image {
   width: 100%;
   height: auto;
+  background-color: #d4c6af93;
 }
 
 #image img {
@@ -404,8 +446,8 @@ article .title {
   padding: 10px 0;
 }
 
-.se .pagination {
-  margin: 30px 0 0;
+.pagination {
+  margin: 0 auto;
   text-align: center;
   width: 100%;
 }
@@ -414,17 +456,16 @@ article .title {
   display: none;
 }
 
-.pagination > .page-numbers {
-  background-color: crimson;
-  color: white;
+.page-numbers {
   display: inline-block;
-  margin: 0 5px;
-  padding: 5px 10px;
+  margin: 0 2px;
+  margin: 1px 1px;
 }
 
-.pagination > .page-numbers.current {
-  background-color: white;
-  color: crimson;
+.page-numbers.current {
+  background-color: #d4c6af93;
+  font-weight: bold;
+  padding: 3px 3px;
 }
 
 @media (max-width: 768px) {

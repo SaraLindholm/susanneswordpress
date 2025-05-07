@@ -71,8 +71,12 @@ get_header(); ?>
                     </p>
                   </div>
                 <?php endif; ?>
-                <div id="button-bottom">
-                <a href="<?php the_permalink(); ?>" class="btn btn-outline-primary" id="button">TILL TAVLAN</a></div>
+
+    
+
+                <div class="button-wrapper">
+                <a href="<?php the_permalink(); ?>" class="btn-view-tavla" id="button">TILL TAVLAN</a></div>
+
           </article>
         <?php endwhile; ?>
 

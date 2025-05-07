@@ -10,12 +10,12 @@
       <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
           <div id="section-left">
             <div id="image">
-            <?php if (has_post_thumbnail()) {?>
+              <?php if (has_post_thumbnail()) { ?>
                 <img class="rounded" src="<?php the_post_thumbnail_url('large'); ?>" alt="Bild med titel: <?php the_title(); ?>"><?php
 
-              } ?>
+                                                                                                                                } ?>
 
-                          </div>
+            </div>
           </div>
           <div id="section-right">
             <article class="tavla">
@@ -47,6 +47,10 @@
                       $color = 'yellow';
                       $label = 'Reserverad';
                       break;
+                    case 'Tillgänglig':
+                      $color = 'green';
+                      $label = 'Tillgänglig';
+                      break;
                     default:
                       $color = 'green';
                       $label = esc_html($tillganglighet);
@@ -72,40 +76,63 @@
                 </div>
                 <?php if ($pris): ?>
                   <p><b>SEK <?= esc_html($pris); ?></b></p>
-                  <?php endif; ?></p>
+                <?php endif; ?></p>
 
 
 
-                  <ul class="meta-data">
+                <ul class="meta-data">
 
 
-                    <li>
-                      <i class="fa-solid fa-list"></i><?php
-                                                      // Hämta kategorier för inlägget
-                                                      $categories = get_the_category();
+                  <li>
+                    <i class="fa-solid fa-list"></i><?php
+                                                    // Hämta kategorier för inlägget
+                                                    $categories = get_the_category();
 
-                                                      if (!empty($categories)) {
-                                                        foreach ($categories as $category) {
-                                                          echo '<a href="' . esc_url(home_url('/kategorier/?kategori=' . $category->slug)) . '" rel="category tag">' . esc_html($category->name) . '</a> ';
-                                                        }
+                                                    if (!empty($categories)) {
+                                                      foreach ($categories as $category) {
+                                                        echo '<a href="' . esc_url(home_url('/kategorier/?kategori=' . $category->slug)) . '" rel="category tag">' . esc_html($category->name) . '</a> ';
                                                       }
-                                                      ?>
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-tag"></i><?php
-                                                      $tags = get_the_tags();
-                                                      if (!empty($tags)) {
-                                                        foreach ($tags as $tag) {
-                                                          echo '<a href="' . esc_url(get_tag_link($tag->term_id)) . '" rel="tag">' . esc_html($tag->name) . '</a> ';
-                                                        }
-                                                      } ?>
-                    </li>
-                  </ul>
+                                                    }
+                                                    ?>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-tag"></i><?php
+                                                    $tags = get_the_tags();
+                                                    if (!empty($tags)) {
+                                                      foreach ($tags as $tag) {
+                                                        echo '<a href="' . esc_url(get_tag_link($tag->term_id)) . '" rel="tag">' . esc_html($tag->name) . '</a> ';
+                                                      }
+                                                    } ?>
+                  </li>
+                </ul>
+
+
+                <?php if (strcasecmp($tillganglighet, 'såld') === 0) : ?>
+
+
+                 <div class="disabled-button-wrapper">
+                    <a href="<?php echo esc_url('/kontaktsida') ?>" class="btn-view-tavla" id="button">EJ TILLGÄNGLIG FÖR KÖP</a>
+                  </div>
+
+
+                <?php endif ?>
+
+                <?php if (strcasecmp($tillganglighet, 'reserverad') === 0 || strcasecmp($tillganglighet, 'tillgänglig') === 0) : ?>
 
                   <div class="button-wrapper">
-                    <div id="button"><a href="<?php the_permalink(); ?>" class="btn btn-dark btn-lg">KONTAKTA MIG FÖR INKÖP</a>
+                    <div id="button"><a href="<?php echo esc_url(add_query_arg(array(
+                                                'id' => get_the_ID(),  // Fyller i tavlans ID
+                                                'namn' => get_the_title() // Fyller i tavlans namn
+                                              ), '/kopsida')); ?>" class="btn-buy-tavla">
+                        KONTAKTA MIG FÖR INKÖP
+                      </a>
                     </div>
                   </div>
+                <?php endif; ?>
+
+
+
+
             </article>
           </div>
 
