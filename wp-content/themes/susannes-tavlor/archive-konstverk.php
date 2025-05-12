@@ -8,6 +8,7 @@ get_header(); ?>
 
   <p>  <h2>Tavlor</h2></p>
   <p>archive-konstverk.php</p>
+<!--   <p>kan det vara en lösning att göra en ytterligare meny här som gör att det känns som att man är kvar på arkivsidan men att man istället går in på sidan för tex en viss kategori?</p> -->
 
   <?php
   $args = array(
@@ -18,7 +19,7 @@ get_header(); ?>
 
   if ($query->have_posts()) : ?>
 
-  
+
     <section class="tavlor-container">
       <div class="tavlor-wrapper">
         <?php while ($query->have_posts()) : $query->the_post(); ?>

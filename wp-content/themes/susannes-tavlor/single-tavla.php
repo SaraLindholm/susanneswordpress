@@ -2,6 +2,7 @@
 
 <main>
   <p>single-tavla.php</p>
+<!--   <p>kan det vara en lösning att göra en ytterligare meny här som gör att det känns som att man är kar op arkivsidan men att man istället går in opå sidan för text en viss kategori?=</p> -->
 
 
   <section>

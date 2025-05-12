@@ -442,6 +442,11 @@ article .title {
 
 /* ----------------------------------------------------Contact */
 
+.wpforms-132-field_6-container  {
+  display: none;
+
+}
+
 .contact-form {
   max-width: 80%;
   margin: 0 auto;
@@ -496,7 +501,7 @@ article .title {
   width: 100%;
   display: flex;
   flex-direction: column;
-  height: 300px;
+  height: 200px;
   align-items: center;
 }
 
@@ -513,13 +518,13 @@ article .title {
   justify-content: center;
   flex-wrap: wrap;
   gap: 2.5rem;
-  padding: 0 20px;
+  padding: 0px;
 }
 
 .card-container {
   display: flex;
   flex-direction: row;
-  border: 1px solid #585858;
+  border: 1px solid #5858583f;
   border-radius: 7px;
   width: 20%; /* Tre kort per rad */
   box-sizing: border-box;
@@ -565,6 +570,7 @@ article .title {
   .card-container {
     display: flex;
     flex-direction: row;
+    margin: 0 10px;
     width: 100%;
     box-sizing: border-box;
     height: 90px;
