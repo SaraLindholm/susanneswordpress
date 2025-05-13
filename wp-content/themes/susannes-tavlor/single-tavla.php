@@ -24,9 +24,13 @@
               <?php
               $tillganglighet = get_field('tillganglighet');
               $matt = get_field('matt');
+              $matt_med_ram = get_field('matt_med_ram');
+
               $pris = get_field('pris');
+              $rea = get_field('rea');
               $beskrivning = get_field('beskrivning');
               $tagg = get_field('tagg');
+              $teknik = get_field('teknik');
               ?>
               <p>
                 <a href="<?php echo home_url('/galleri'); ?>">
@@ -70,16 +74,35 @@
               <?php if ($matt): ?>
                 <p>Mått: <?= esc_html($matt); ?>
                 <?php endif; ?></p>
+              <?php if ($matt_med_ram): ?>
+                <p>Mått: <?= esc_html($matt_med_ram); ?>
+                <?php endif; ?> med ram</p>
+                <?php if ($teknik): ?>
+                <p>Teknik: <?= esc_html($teknik); ?>
+                <?php endif; ?></p>
 
 
                 <div id="content"><?php if ($beskrivning): ?>
                     <?= esc_html($beskrivning); ?>
                   <?php endif; ?>
                 </div>
-                <?php if ($pris): ?>
-                  <p><b>SEK <?= esc_html($pris); ?></b></p>
-                <?php endif; ?></p>
-                tagg
+
+                <div class="rea-wrapper">
+  <?php if ($rea): ?>
+    <!-- Om det finns ett REA-pris -->
+    <p class="red"><del>SEK <?= esc_html($pris); ?></del></p>
+    <p>REA: SEK <?= esc_html($rea); ?></p>
+  <?php else: ?>
+    <!-- Om det INTE finns ett REA-pris -->
+    <p><b>SEK <?= esc_html($pris); ?></b></p>
+  <?php endif; ?>
+</div>
+
+
+
+
+
+
                 <?php if ($tagg): ?>
                   <p><b>Tagg: <?= esc_html($tagg); ?></b></p>
                 <?php endif; ?></p>

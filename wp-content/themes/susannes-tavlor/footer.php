@@ -1,62 +1,21 @@
 <footer id="footer">
 
-<h4>Senaste inläggen</h4>
-  <section class="footer-cards">
 
+<section class="footer-contact">
+  <div class="contact">
+    <p>Kontakt</p>
 
-    <?php
-    $reccent_posts = new WP_Query([
-      'posts_per_page' => 3,
-      'post_status' => 'publish',
-      'orderby' => 'date',
-    ]);
-    if ($reccent_posts->have_posts()) :
-      while ($reccent_posts->have_posts()) : $reccent_posts->the_post();
-    ?>
+  </div>
+  <div class="contact">
+    <p>Instagram</p>
 
-          <div class="card-container">
-          <div class="card-image">
-        <?php
-              if (has_post_thumbnail()) {
-                the_post_thumbnail('thumbnail', ['alt' => get_the_title()]);
-              } else {
-                // Hämta första bilden från innehållet
-                $content = get_the_content();
-                preg_match('/<img.+src=[\'"](?P<src>.+?)[\'"].*>/i', $content, $image);
-                if (!empty($image['src'])) {
-                  echo '<img src="'  . esc_url($image['src']) . '" alt="' . esc_attr(get_the_title()) . '">';
-                } else {
-                  // Här är den rätta vägen till din standardbild i temamappen
-                  $default_image_url = esc_url(get_template_directory_uri() . '/images/no-image.png');
-                  echo '<img src="' . $default_image_url . '" alt="Standardbild">';
+  </div>
 
-                }
-              }
-              ?>
-          </div>
-
-          <div class="card-text">
-            <a href="<?php the_permalink() ?>">
-              <p class="card-title"><?php the_title() ?></p>
-              <p class="card-text"><?php the_date() ?></p>
-              <!-- <p class="card-text">ralala</p> -->
-            </a>
-          </div>
-
-            </div>
-
-      <?php
-      endwhile;
-      wp_reset_postdata();
-    else :
-      ?>
-      <p>Inga inlägg att visa</p>
-    <?php endif; ?>
-  </section>
+</section>
 
   <section id="copyright">
     <div>
-      <p>ArtBySusanne25 &copy; <?php echo date('Y'); ?></p>
+      <h6>ArtBySusanne25 &copy; <?php echo date('Y'); ?></h6>
     </div>
   </section>
 

@@ -8,7 +8,7 @@
 html,
 body {
   height: 100%;
-  margin: 0;
+  margin: 0 auto;
 }
 
 body {
@@ -43,9 +43,9 @@ label {
 ------------------------------------------------------------------ */
 
 #wrap {
-  background-color: #d4c6af;
-  height: 200px;
+  background-color: #A7C0D4;
   width: 100%;
+  padding-bottom: 10px;
 
 }
 
@@ -57,45 +57,28 @@ label {
 
 /* utan mediaquery */
 #menu-navbar {
-  background-color: rgb(255, 127, 159);
+/*   background-color: rgb(255, 127, 159); */
   list-style: none; /* Ta bort punkter från listan */
+  text-transform: uppercase;
   display: flex;
+  color: 	#4A4A4A;
+
   flex-direction: row; /* Gör så att länkarna ligger på rad */
   align-items: center;
   justify-content: flex-start;
-  gap: 1,2rem; /* Mellanrum mellan länkar */
+  gap: 1rem; /* Mellanrum mellan länkar */
 }
+#menu-navbar a {
 
-@media (max-width: 600px) {
-  #wrap {
-    height: 300px;
-    background-color: rgb(23, 85, 64);
+
+    color: 	#4A4A4A;
+
+
   }
 
-  #nav .menu {
-    margin: 0 -15px;
-  }
 
-  #nav .menu > li {
-    float: none;
-    width: 100%;
-  }
-  #menu-navbar {
-    background-color: rgb(255, 127, 159);
-    list-style: none; /* Ta bort punkter från listan */
-    display: flex;
-    flex-direction: column; /* Gör så att länkarna ligger på rad */
-    justify-content: flex-start;
-    gap: 0.5rem; /* Mellanrum mellan länkar */
-}
 
-}
-
-@media (min-width: 601px) and (max-width: 768px) {
-  #wrap {
-    height: 250px;
-    background-color: aquamarine;
-  }
+@media (max-width: 768px) {
 
   .logo {
     font-size: 2.2rem;
@@ -103,18 +86,16 @@ label {
     font-family: karla;
   }
   #menu-navbar {
-    background-color: seagreen;
     list-style: none; /* Ta bort punkter från listan */
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 0.5rem; /* Mellanrum mellan länkar */
+    gap: 0.1rem; /* Mellanrum mellan länkar */
   }
+
 }
-
-
 
 
 #menu-navbar > li {
@@ -128,8 +109,9 @@ label {
 }
 
 #menu-navbar > li.current-menu-item {
-  background-color: #f6f5f2;
-  border-radius: 5px;
+ /*  background-color: #E08253; */
+ background-color: beige;
+  border-radius: 3px;
 }
 
 #meny-navbar > li > a {
@@ -142,7 +124,8 @@ a:link {
 }
 
 #menu-navbar li a:hover {
-  color: darkred;
+/*   color: darkred; */
+  background-color: #E08253;
   border-radius: 5px;
 }
 
@@ -153,13 +136,42 @@ a:link {
 
 /* BLOGG
 ------------------------------------------------------------------ */
+#blog-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+#blog-container {
+  width: 70%;
+}
+
+#hero-cloud {
+
+width: 30%;
+height: 30%;
+display: flex;
+}
+
+#cloud {
+  margin-top: 20px;
+  background-color: #e082537c;
+  padding: 20px;
+  border-radius: 30%;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 30%;
+  }
 
 .blog-post {
   margin: 0 auto;
 }
 
 article.blogg-post {
-  background-color: #d4c6af93;
+  background-color: #E1E8ED;
   border: solid 1px #ccc;
   padding: 20px;
   position: relative;
@@ -236,7 +248,7 @@ article .title {
 }
 
 article.tavla-archive {
-  background-color: #d4c6af93;
+  background-color: #E1E8ED;
   border: solid 1px #ccc;
   padding: 20px;
   position: relative;
@@ -247,7 +259,7 @@ article.tavla-archive {
 
 .tavlor-wrapper article {
   margin: 20px;
-  background-color: #d4c6af93;
+  background-color: #E1E8ED;
 }
 
 
@@ -283,29 +295,40 @@ article .title {
 }
 
 
- .btn-view-tavla{
-  color: white;
-  font-family: Abyssinica SIL;
-  font-size: 1rem;
- }
-
  .btn-view-tavla:hover,
  .btn-view-tavla:active {
-  color:white;
+
   background-color: rgb(75, 72, 72);
 }
 /* Tavla arkiv */
 
-
+/* #E1E8ED för bakgrund på tavlan
+#A7C0D4 för header och footer
+#E08253 för aktiva knappar
+*/
 
 /*------------------------------------------Single Tavla */
+
+.status-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.red {
+  color: red;
+
+}
+
  .button-wrapper{
   margin: 0 auto;
   margin-top: 10px;
   display: flex;
   width: 100%;
   justify-content: center;
-  background-color: black;
+  background-color: #E08253;
   border-radius: 5px;
  }
 
@@ -324,15 +347,18 @@ article .title {
 
 
  .button-wrapper:hover {
-  color:white;
   background-color: rgb(75, 72, 72);
 }
 
 
- .btn-buy-tavla{
-  color: white;
+ .btn-buy-tavla.btn-view-tavla{
   font-family: Abyssinica SIL;
   font-size: 1rem;
+ }
+
+ .btn-buy-tavla.btn-view-tavla > a {
+
+ font-weight: bold;
  }
 
  .btn-buy-tavla:hover,
@@ -481,7 +507,7 @@ article .title {
 }
 
 .page-numbers.current {
-  background-color: #d4c6af93;
+  background-color: #E08253;
   font-weight: bold;
   padding: 3px 3px;
 }
@@ -497,12 +523,30 @@ article .title {
 
 #footer {
   padding: 10px 0;
-  background-color: #d4c6af;
+  background-color: #A7C0D4;
   width: 100%;
   display: flex;
   flex-direction: column;
-  height: 200px;
   align-items: center;
+}
+
+
+.footer-contact {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
+/* Enskilda kort */
+.footer-contact .contact {
+  width: 150px;
+  text-align: center;
+  font-family: Karla, sans-serif;
 }
 
 #copyright {
@@ -511,102 +555,32 @@ article .title {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.footer-cards {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2.5rem;
-  padding: 0px;
-}
-
-.card-container {
-  display: flex;
-  flex-direction: row;
-  border: 1px solid #5858583f;
-  border-radius: 7px;
-  width: 20%; /* Tre kort per rad */
-  box-sizing: border-box;
-}
-
-.card-image {
-  width: 35%;
-  height: auto;
-  margin-right: 10px;
 
 }
-.card-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
 
-.card-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-#footer h4 {
-  margin-top: 20px;
-  margin-left: 20px;
-}
+
 
 @media (max-width: 600px) {
 
 #footer {
   padding: 10px 0;
-  background-color: #d4c6af;
+  background-color: #d2f0ff;
   width: 100%;
   display: flex;
   height: 450px;
   align-items: center;
 }
-  #footer h4 {
-    margin-top: 10px;
-  }
 
-  .card-container {
-    display: flex;
-    flex-direction: row;
-    margin: 0 10px;
-    width: 100%;
-    box-sizing: border-box;
-    height: 90px;
-  }
+.footer-contact {
+  flex-direction: column;
+  align-items: center;
+}
 
-  .card-image {
-    width: 45%;
-    height: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-
-/* TODO jobba på stylingen med bild i footern på breda skärmar */
-  }
-  .card-image img {
-
-    width: auto;
-
-    display: flex;
-    height: 100%;
-    border-radius: 8px;
-  }
-
-  .card-text {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+.footer-contact .contact {
+  width: 100%;
+  max-width: 300px;
 }
 
 
-.status-dot {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  margin-right: 6px;
-  vertical-align: middle;
+
 }

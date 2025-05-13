@@ -16,39 +16,24 @@ include 'helper.php';
   <?php wp_body_open(); ?>
 
   <header id="wrap">
-  <nav id="nav">
-  <div class="container d-flex justify-content-end">
- <div class="col-xs-6 col-sm-4">
-  <!-- TODO fixa så att "loggan" ligger i rött höjd och att den lägger sig en rad ovan för navbaren i smalt lge -->
-  <a class="logo" href="<?php echo home_url(); ?>">
-              <?php if (has_custom_logo()) {
-                the_custom_logo();
-              } else { ?>
-                <?php bloginfo('name'); ?>
-              <?php } ?>
-            </a>
-            </div>
-
-
-            <?php
-            wp_nav_menu([
-              'theme_location' => 'main_menu',
-              'menu_class' => 'menu',
-              'container' => false,
-            ]);
-            ?>
-
-      </div>
+  <div class="container">
+    <div class="logo-wrapper">
+      <a class="logo" href="<?php echo home_url(); ?>">
+        <?php if (has_custom_logo()) {
+          the_custom_logo();
+        } else {
+          bloginfo('name');
+        } ?>
+      </a>
+    </div>
+    <nav id="nav">
+      <?php
+      wp_nav_menu([
+        'theme_location' => 'main_menu',
+        'menu_class' => 'menu',
+        'container' => false,
+      ]);
+      ?>
     </nav>
-      <!--    <header id="header">
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-8 col-sm-6">
-
-          </div>
-
-        </div>
-      </div>
-    </header> -->
-
-          </header>
+  </div>
+</header>

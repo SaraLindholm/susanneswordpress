@@ -4,11 +4,11 @@
 get_header(); ?>
 
 <main>
-  <h2>Välkommen till Susannes Tavlor</h2>
-  <p>home.php</p>
-  <p> lista över inlägg tänker jag? bloggsidan?</p>
-</main>
-<section>
+<div id="blog-page">
+
+
+
+<section id="blog-container">
   <div class="row">
   <div id="primary" class="col-xs-12 col-md-9 offset-md-1">
       <h1><?php single_post_title(); ?></h1>
@@ -23,19 +23,7 @@ get_header(); ?>
               <li>
                 <i class="fa-solid fa-calendar"></i><?php echo get_the_date(); ?>
               </li>
-
-              <li>
-                <i class="fa-solid fa-list"></i>
-                <?php
-                $categories = get_the_category();
-                if (!empty($categories)) {
-                  foreach ($categories as $category) {
-                    echo '<a href="' . esc_url(get_category_link($category->term_id)) . '" rel="category tag">' . esc_html($category->name) . '</a> ';
-                  }
-                }
-                ?>
-              </li>
-            </ul>
+           </ul>
             <p class="wp-thumbnail">
               <?php
               if (has_post_thumbnail()) {
@@ -84,6 +72,19 @@ get_header(); ?>
   </div>
 
 </section>
+<section id="hero-cloud">
+<div id="cloud">
+<div>
+De mest populära taggarna är:
+</div>
+
+<?php
+wp_tag_cloud()?>
+</div>
+</section>
+</div>
+
+</main>
 
 <!-- excerpt($row['description'],10) för att komma av inläggen som visas -->
 <?php get_footer(); ?>
