@@ -88,15 +88,15 @@
                 </div>
 
                 <div class="rea-wrapper">
-  <?php if ($rea): ?>
-    <!-- Om det finns ett REA-pris -->
-    <p class="red"><del>SEK <?= esc_html($pris); ?></del></p>
-    <p>REA: SEK <?= esc_html($rea); ?></p>
-  <?php else: ?>
-    <!-- Om det INTE finns ett REA-pris -->
-    <p><b>SEK <?= esc_html($pris); ?></b></p>
-  <?php endif; ?>
-</div>
+                <?php if ($rea): ?>
+                  <!-- Om det finns ett REA-pris -->
+                  <p class="red"><del>SEK <?= esc_html($pris); ?></del></p>
+                  <p>REA: SEK <?= esc_html($rea); ?></p>
+                <?php else: ?>
+                  <!-- Om det INTE finns ett REA-pris -->
+                  <p><b>SEK <?= esc_html($pris); ?></b></p>
+                <?php endif; ?>
+              </div>
 
 
 

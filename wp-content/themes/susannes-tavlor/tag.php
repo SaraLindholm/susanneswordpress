@@ -3,15 +3,18 @@
 
 get_header(); ?>
 
+
+
+<div id="blog-page">
+
 <main>
-  <h2>Välkommen till Susannes Tavlor</h2>
-  <p>Tag: <?php
+  <h4>Inlägg med Taggen: <?php
 $tag = get_queried_object();
-echo '<h1>' . esc_html($tag->name) . '</h1>';?></p>
-</main>
-<section>
+echo  esc_html($tag->name) ;?></h4>
+
+<section id="blog-container">
   <div class="row">
-    <div id="primary" class="col-xs-12 col-md-9">
+  <div id="primary" class="col-xs-12 col-md-9 offset-md-1">
       <h1><?php single_post_title(); ?></h1>
       <?php
       //starta loopen
@@ -24,23 +27,8 @@ echo '<h1>' . esc_html($tag->name) . '</h1>';?></p>
               <li>
                 <i class="fa-solid fa-calendar"></i><?php echo get_the_date(); ?>
               </li>
-              <li>
-                <i class="fa-solid fa-user"></i>
-                <?php echo get_the_author_posts_link(); ?>
-              </li>
-              <li>
-                <i class="fa-solid fa-list"></i>
-                <?php
-                $categories = get_the_category();
-                if (!empty($categories)) {
-                  foreach ($categories as $category) {
-                    echo '<a href="' . esc_url(get_category_link($category->term_id)) . '" rel="category tag">' . esc_html($category->name) . '</a> ';
-                  }
-                }
-                ?>
-              </li>
-            </ul>
-            <p>
+           </ul>
+            <p class="wp-thumbnail">
               <?php
               if (has_post_thumbnail()) {
                 the_post_thumbnail('thumbnail', ['alt' => get_the_title()]);
@@ -72,7 +60,7 @@ echo '<h1>' . esc_html($tag->name) . '</h1>';?></p>
 
 
         <!-- TODO lägg till klasser för knapparna -->
-        <nav class="pagination pagination" aria-label="Sidonumrering för inlägg">
+        <nav class="pagination" aria-label="Sidonumrering för inlägg">
           <!-- Lägg till klasser för pagineringen här -->
           <?php the_posts_pagination(array(
             'mid_size' => 2,
@@ -88,6 +76,20 @@ echo '<h1>' . esc_html($tag->name) . '</h1>';?></p>
   </div>
 
 </section>
+<section id="hero-cloud">
+<div id="cloud">
+<div>
+De mest populära taggarna är:
+</div>
+
+<?php
+wp_tag_cloud()?>
+</div>
+</section>
+</div>
+
+
+</main>
 
 <!-- excerpt($row['description'],10) för att komma av inläggen som visas -->
 <?php get_footer(); ?>
