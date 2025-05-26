@@ -74,9 +74,11 @@
               <?php if ($matt): ?>
                 <p>Mått: <?= esc_html($matt); ?>
                 <?php endif; ?></p>
+
               <?php if ($matt_med_ram): ?>
-                <p>Mått: <?= esc_html($matt_med_ram); ?>
-                <?php endif; ?> med ram</p>
+                <p>Mått: <?= esc_html($matt_med_ram); ?> med ram
+                <?php endif; ?></p>
+
                 <?php if ($teknik): ?>
                 <p>Teknik: <?= esc_html($teknik); ?>
                 <?php endif; ?></p>
@@ -91,12 +93,32 @@
                 <?php if ($rea): ?>
                   <!-- Om det finns ett REA-pris -->
                   <p class="red"><del>SEK <?= esc_html($pris); ?></del></p>
-                  <p>REA: SEK <?= esc_html($rea); ?></p>
+                  <p>Nytt Pris: <?= esc_html($rea); ?> SEK</p>
                 <?php else: ?>
                   <!-- Om det INTE finns ett REA-pris -->
-                  <p><b>SEK <?= esc_html($pris); ?></b></p>
+                  <p><b>Pris: <?= esc_html($pris); ?></b> SEK</p>
                 <?php endif; ?>
               </div>
+
+
+
+
+
+<ul class="meta-data">
+  <li>
+    <i class="fa-solid fa-list"></i>
+    <?php
+    // Hämta kategorier för inlägget
+    $categories = get_the_category();
+
+    if (!empty($categories)) {
+      foreach ($categories as $category) {
+        echo '<a href="' . esc_url(get_category_link($category->term_id)) . '" rel="category tag">' . esc_html($category->name) . '</a> ';
+      }
+    }
+    ?>
+  </li>
+</ul>
 
 
 
@@ -108,54 +130,28 @@
                 <?php endif; ?></p>
 
                 <?php
-echo get_the_term_list( get_the_ID(), 'tagg', '<p class="tavla-taggar">Taggar: ', ', ', '</p>' );
+echo get_the_term_list( get_the_ID(), 'tagg', '<p class="tavla-taggar"> <i class="fa-solid fa-tag"></i> ', ', ', '</p>' );
 ?>
 
-                <ul class="meta-data">
 
-
-                  <li>
-                    <i class="fa-solid fa-list"></i><?php
-                                                    // Hämta kategorier för inlägget
-                                                    $categories = get_the_category();
-
-                                                    if (!empty($categories)) {
-                                                      foreach ($categories as $category) {
-                                                        echo '<a href="' . esc_url(home_url('/kategorier/?kategori=' . $category->slug)) . '" rel="category tag">' . esc_html($category->name) . '</a> ';
-                                                      }
-                                                    }
-                                                    ?>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-tag"></i><?php
-                                                    $tags = get_the_tags();
-                                                    if (!empty($tags)) {
-                                                      foreach ($tags as $tag) {
-                                                        echo '<a href="' . esc_url(get_tag_link($tag->term_id)) . '" rel="tag">' . esc_html($tag->name) . '</a> ';
-                                                      }
-                                                    } ?>
-                  </li>
-                </ul>
-
-
-                <?php if (strcasecmp($tillganglighet, 'såld') === 0) : ?>
+                <?php if (strcasecmp($tillganglighet, 'reserverad') === 0 || strcasecmp($tillganglighet, 'såld') === 0) : ?>
 
 
                  <div class="disabled-button-wrapper">
-                    <a href="<?php echo esc_url('/kontaktsida') ?>" class="btn-view-tavla" id="button">EJ TILLGÄNGLIG FÖR KÖP</a>
+                    <a href="<?php echo esc_url('/kontaktsida') ?>" class="btn-view-tavla" id="button">EJ TILLGÄNGLIG</a>
                   </div>
 
 
                 <?php endif ?>
 
-                <?php if (strcasecmp($tillganglighet, 'reserverad') === 0 || strcasecmp($tillganglighet, 'tillgänglig') === 0) : ?>
+                <?php if (strcasecmp($tillganglighet, 'tillgänglig') === 0) : ?>
 
                   <div class="button-wrapper">
                     <div id="button"><a href="<?php echo esc_url(add_query_arg(array(
                                                 'id' => get_the_ID(),  // Fyller i tavlans ID
                                                 'namn' => get_the_title() // Fyller i tavlans namn
                                               ), '/kopsida')); ?>" class="btn-buy-tavla">
-                        KONTAKTA MIG FÖR INKÖP
+                        KONTAKT FÖR KÖP
                       </a>
                     </div>
                   </div>

@@ -110,7 +110,7 @@ label {
   line-height: 40px;
   list-style: none;
 
-  padding: 0 15px;
+  padding: 0 1px;
   text-decoration: none;
   font-family:  Playfair Display;
   font-size: 1.3rem;
@@ -279,6 +279,35 @@ article .title {
 
 /*------------------------------------------Tavel arkiv/Tavel-taggar/kategori */
 
+.category-meny {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+}
+/* TODO fixa så menyn ser lite vettig ut */
+
+.category-meny li a {
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family:  Playfair Display;
+  font-size: 1rem;
+/*   background-color: #f3f3f3;
+  color: #333;
+  transition: 0.2s ease ;*/
+}
+/* .category-meny li {
+flex-direction: column;
+}
+ */
+.category-meny li a:hover {
+  background-color: #E08253;
+}
+
+/*  */
 
 .tavlor-container {
   display: flex;
@@ -390,6 +419,7 @@ article .title {
   justify-content: center;
   background-color: #E08253;
   border-radius: 5px;
+  padding: 10px 20px;
  }
 
  .disabled-button-wrapper{
@@ -448,7 +478,7 @@ article .title {
 
 #section-right {
   width: 50%;
-  height: 50vh;
+  height: auto;
   padding: 20px;
   box-sizing: border-box;
   display: flex;
@@ -458,7 +488,8 @@ article .title {
 }
 
 .tavla{
-
+  margin-top: auto;
+  margin-bottom: auto;
   border: solid 1px #ccc;
   padding: 20px;
   position: relative;

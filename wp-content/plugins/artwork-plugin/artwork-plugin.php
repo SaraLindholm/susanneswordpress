@@ -18,7 +18,7 @@ function tavel_register_tagg_taxonomy() {
 	);
 
 	$args = array(
-			'hierarchical'      => false, // false = fungerar som vanliga taggar (inte kategorier)
+			'hierarchical'      => false,
 			'labels'            => $labels,
 			'show_ui'           => true,
 			'show_admin_column' => true,
@@ -28,6 +28,8 @@ function tavel_register_tagg_taxonomy() {
 	register_taxonomy( 'tagg', array( 'tavla' ), $args );
 }
 add_action( 'init', 'tavel_register_tagg_taxonomy' );
+
+
 
 function tavel_post_type() {
 

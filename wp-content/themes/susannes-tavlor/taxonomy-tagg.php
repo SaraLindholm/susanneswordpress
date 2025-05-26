@@ -31,9 +31,16 @@ get_header(); ?>
               <p><strong>Mått: </strong><?= esc_html($matt); ?>
               <?php endif; ?></p>
 
-              <?php if ($pris): ?>
-                <p><strong>Pris: </strong><?= esc_html($pris); ?> SEK
-                <?php endif; ?></p>
+              <div class="rea-wrapper">
+                <?php if ($rea): ?>
+                  <!-- Om det finns ett REA-pris -->
+                  <p class="red"><del>SEK <?= esc_html($pris); ?></del></p>
+                  <p>Nytt Pris: <?= esc_html($rea); ?> SEK</p>
+                <?php else: ?>
+                  <!-- Om det INTE finns ett REA-pris -->
+                  <p><b>Pris: <?= esc_html($pris); ?></b> SEK</p>
+                <?php endif; ?>
+              </div>
 
                 <?php if ($tillganglighet): ?>
                   <div class="tillganglighet-status">

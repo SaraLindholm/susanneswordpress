@@ -1,46 +1,18 @@
+
 <?php
-
-
 get_header(); ?>
 
 <main>
 
+  <p>category.php</p>
+  <h2>Kategorier: <?php single_term_title(); ?></h2>
 
-  <p>  <h2>Tavlor</h2></p>
-  <p>archive-konstverk.php</p>
-<!--   <p>kan det vara en lösning att göra en ytterligare meny här som gör att det känns som att man är kvar på arkivsidan men att man istället går in på sidan för tex en viss kategori?</p> -->
-
-  <?php
-  $args = array(
-    'post_type' => 'tavla',
-    'posts_per_page' => 22,
-  );
-  $query = new WP_Query($args);
-
-  if ($query->have_posts()) : ?>
-
-<ul class="category-meny">
-  <?php
-  $args = array(
-    'orderby'    => 'name',       // sortera alfabetiskt
-    'order'      => 'ASC',
-    'show_count' => true,
-         // visa antal inlägg i varje kategori
-    'title_li'   => '',           // ta bort "Kategorier" rubrik
-    'taxonomy'   => 'category',   // din anpassade kategori-taxonomi
-
-  );
-  wp_list_categories($args);
-  ?>
-</ul>
-
-
-    <section class="tavlor-container">
-      <div class="tavlor-wrapper">
-        <?php while ($query->have_posts()) : $query->the_post(); ?>
-          <article class="tavla-archive">
-
-            <?php
+  <?php if ( have_posts() ) : ?>
+  <section class="tavlor-tagg-container">
+  <div class="tavlor-wrapper">
+    <?php while ( have_posts() ) : the_post(); ?>
+    <article class="tavla-archive">
+    <?php
             $tillganglighet = get_field('tillganglighet');
             $matt = get_field('matt');
             $pris = get_field('pris');
@@ -58,6 +30,7 @@ get_header(); ?>
             <?php if ($matt): ?>
               <p><strong>Mått: </strong><?= esc_html($matt); ?>
               <?php endif; ?></p>
+
               <div class="rea-wrapper">
                 <?php if ($rea): ?>
                   <!-- Om det finns ett REA-pris -->
@@ -102,24 +75,20 @@ get_header(); ?>
                 <div class="button-wrapper">
                 <a href="<?php the_permalink(); ?>" class="btn-view-tavla" id="button">TILL TAVLAN</a></div>
 
-          </article>
-        <?php endwhile; ?>
-
-      </div>
-    </section>
 
 
 
+    </article>
 
+    <?php endwhile; ?>
+    </div>
 
+</section>
+<?php else : ?>
+  <p>Inga tavlor hittades under denna kategori.</p>
+<?php endif; ?>
 
-
-  <?php
-  else :
-    echo '<p>Inga konstverk hittades.</p>';
-  endif;
-
-  // Återställ postdata
+<?php
   wp_reset_postdata();
   ?>
 </main>
