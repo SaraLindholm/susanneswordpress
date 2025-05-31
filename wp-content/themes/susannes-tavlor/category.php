@@ -4,10 +4,38 @@ get_header(); ?>
 
 <main>
 
-  <p>category.php</p>
+  <p>category.php??</p>
   <h2>Kategorier: <?php single_term_title(); ?></h2>
 
+
+
   <?php if ( have_posts() ) : ?>
+
+    <ul class="category-meny"><!-- Meny för tavlornas kategorier -->
+    <li><a href="<?php echo home_url('/galleri'); ?>">
+                  Visa alla tavlor
+                </a></li>
+      <?php
+      $args = array(
+        'orderby'    => 'name',       // sortera alfabetiskt
+        'order'      => 'ASC',       // stigande ordning, dvs A-Ö
+        'hide_empty' => true,        // visa endast kategorier som har tavlor
+        'show_count' => true,         // visa antal tavlor i varje kategori
+        'title_li'   => '',           // ta bort "Kategorier" rubrik
+        'taxonomy'   => 'category',   // den anpassade kategori-taxonomin
+
+      );
+      wp_list_categories($args);
+      ?>
+    </ul>
+
+<!-- Visa antal sidor för felsökning -->
+<?php
+  global $wp_query;
+  echo '<p>Antal sidor: ' . $wp_query->max_num_pages . '</p>';
+  ?>
+
+
   <section class="tavlor-tagg-container">
   <div class="tavlor-wrapper">
     <?php while ( have_posts() ) : the_post(); ?>
@@ -82,6 +110,16 @@ get_header(); ?>
 
     <?php endwhile; ?>
     </div>
+ <!-- Pagination -->
+ <nav class="pagination" aria-label="Sidonumrering för inlägg">
+      <?php
+      the_posts_pagination(array(
+        'mid_size'  => 2,
+        'prev_text' => '<span class="page-numbers">Föregående</span>',
+        'next_text' => '<span class="page-numbers">Nästa</span>',
+      ));
+      ?>
+    </nav>
 
 </section>
 <?php else : ?>
