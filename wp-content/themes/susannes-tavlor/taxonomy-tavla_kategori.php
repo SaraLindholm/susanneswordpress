@@ -4,7 +4,7 @@ get_header(); ?>
 
 <main>
 
-  <p>category.php??</p>
+  <p>taxonomy-tavla_kategori.php?</p>
   <h2>Kategorier: <?php single_term_title(); ?></h2>
 
 
@@ -22,7 +22,7 @@ get_header(); ?>
         'hide_empty' => true,        // visa endast kategorier som har tavlor
         'show_count' => true,         // visa antal tavlor i varje kategori
         'title_li'   => '',           // ta bort "Kategorier" rubrik
-        'taxonomy'   => 'category',   // den anpassade kategori-taxonomin
+        'taxonomy'   => 'tavla_kategori',   // den anpassade kategori-taxonomin
 
       );
       wp_list_categories($args);

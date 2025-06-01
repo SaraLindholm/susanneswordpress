@@ -3,8 +3,40 @@
 Plugin Name: Plugin for Tavlor
 Description: A plugin to display artwork posts with a custom layout.
 */
+
+// Registrera en hierarkisk taxonomi för kategorier för tavlor
+function tavel_register_kategori_taxonomy() {
+	$labels = array(
+		'name'              => _x( 'Tavla Kategorier', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Tavla Kategori', 'taxonomy singular name' ),
+		'search_items'      => __( 'Sök Kategorier' ),
+		'all_items'         => __( 'Alla Kategorier' ),
+		'parent_item'       => __( 'Föräldrakategori' ),
+		'parent_item_colon' => __( 'Föräldrakategori:' ),
+		'edit_item'         => __( 'Redigera Kategori' ),
+		'update_item'       => __( 'Uppdatera Kategori' ),
+		'add_new_item'      => __( 'Lägg till ny Kategori' ),
+		'new_item_name'     => __( 'Nytt Kategorinamn' ),
+		'menu_name'         => __( 'Kategorier' ),
+	);
+
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'show_in_rest'      => true,
+		'rewrite'           => array( 'slug' => 'tavla-kategori' ),
+	);
+
+	register_taxonomy( 'tavla_kategori', array( 'tavla' ), $args );
+}
+add_action( 'init', 'tavel_register_kategori_taxonomy' );
+
+
 // Registrera den anpassade taxonomin "tagg" för tavlor
-function tavel_register_tagg_taxonomy() {
+//Denna ska tas bort helt och hållet
+/* function tavel_register_tagg_taxonomy() {
 	$labels = array(
 			'name'              => _x( 'Taggar', 'taxonomy general name' ),
 			'singular_name'     => _x( 'Tagg', 'taxonomy singular name' ),
@@ -27,7 +59,7 @@ function tavel_register_tagg_taxonomy() {
 
 	register_taxonomy( 'tagg', array( 'tavla' ), $args );
 }
-add_action( 'init', 'tavel_register_tagg_taxonomy' );
+add_action( 'init', 'tavel_register_tagg_taxonomy' ); */
 
 
 
@@ -67,7 +99,7 @@ function tavel_post_type() {
 		'description'           => __( 'Sida för Tavlor', 'text_domain' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'thumbnail', 'comments', 'custom-fields' ),
-		'taxonomies'            => array( 'category', 'post_tag', 'tagg' ),
+		'taxonomies'            => array( 'tavla_kategori' ),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
@@ -83,9 +115,6 @@ function tavel_post_type() {
 		'capability_type'       => 'page',
 	);
 	register_post_type( 'tavla', $args );
-
-	register_taxonomy_for_object_type( 'category', 'tavla' );
-	register_taxonomy_for_object_type( 'tagg', 'tavla' );
 
 }
 add_action( 'init', 'tavel_post_type', 0 );

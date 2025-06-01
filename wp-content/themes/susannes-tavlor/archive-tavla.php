@@ -6,7 +6,7 @@ get_header(); ?>
 <main>
 
 
-  <h2>Galleri</h2>
+  <h2>Galleri-archive tavla.php</h2>
 
   <?php
   $args = array(

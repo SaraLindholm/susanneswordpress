@@ -8,6 +8,7 @@ get_header(); ?>
 <div id="blog-page">
 
 <main>
+  tag.php
   <h4>Inlägg med Taggen: <?php
 $tag = get_queried_object();
 echo  esc_html($tag->name) ;?></h4>

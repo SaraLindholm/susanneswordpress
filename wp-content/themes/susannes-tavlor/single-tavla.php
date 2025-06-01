@@ -149,7 +149,7 @@ echo get_the_term_list( get_the_ID(), 'tagg', '<p class="tavla-taggar"> <i class
                   <div class="button-wrapper">
                     <div id="button"><a href="<?php echo esc_url(add_query_arg(array(
                                                 'id' => get_the_ID(),  // Fyller i tavlans ID
-                                                'namn' => get_the_title() // Fyller i tavlans namn
+                                                'title' => get_the_title() // Fyller i tavlans title
                                               ), '/kopsida')); ?>" class="btn-buy-tavla">
                         KONTAKT FÖR KÖP
                       </a>

@@ -14,6 +14,7 @@ body {
   font-size: large;
 }
 
+
 body {
   background-color: #f6f5f2;
   font-family: Rubik;
@@ -552,6 +553,10 @@ article .title {
   padding: 1%;
 }
 
+}
+/* Döljer fälten som visar tavlans ID och title */
+.hiddenForm {
+  display: none;
 }
 
 
