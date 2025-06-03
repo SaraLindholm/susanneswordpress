@@ -47,6 +47,7 @@
                 }?>
               </li>
             </ul>
+            <?php comments_template(); ?>
               </article>
             <?php endwhile; ?>
 

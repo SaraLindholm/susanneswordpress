@@ -4,15 +4,13 @@ Plugin Name: Plugin for Tavlor
 Description: A plugin to display artwork posts with a custom layout.
 */
 
-// Registrera en hierarkisk taxonomi för kategorier för tavlor
+// Registrera en  taxonomi för kategorier för tavlor
 function tavel_register_kategori_taxonomy() {
 	$labels = array(
 		'name'              => _x( 'Tavla Kategorier', 'taxonomy general name' ),
 		'singular_name'     => _x( 'Tavla Kategori', 'taxonomy singular name' ),
 		'search_items'      => __( 'Sök Kategorier' ),
 		'all_items'         => __( 'Alla Kategorier' ),
-		'parent_item'       => __( 'Föräldrakategori' ),
-		'parent_item_colon' => __( 'Föräldrakategori:' ),
 		'edit_item'         => __( 'Redigera Kategori' ),
 		'update_item'       => __( 'Uppdatera Kategori' ),
 		'add_new_item'      => __( 'Lägg till ny Kategori' ),
@@ -32,36 +30,6 @@ function tavel_register_kategori_taxonomy() {
 	register_taxonomy( 'tavla_kategori', array( 'tavla' ), $args );
 }
 add_action( 'init', 'tavel_register_kategori_taxonomy' );
-
-
-// Registrera den anpassade taxonomin "tagg" för tavlor
-//Denna ska tas bort helt och hållet
-/* function tavel_register_tagg_taxonomy() {
-	$labels = array(
-			'name'              => _x( 'Taggar', 'taxonomy general name' ),
-			'singular_name'     => _x( 'Tagg', 'taxonomy singular name' ),
-			'search_items'      => __( 'Sök taggar' ),
-			'all_items'         => __( 'Alla taggar' ),
-			'edit_item'         => __( 'Redigera tagg' ),
-			'update_item'       => __( 'Uppdatera tagg' ),
-			'add_new_item'      => __( 'Lägg till ny tagg' ),
-			'new_item_name'     => __( 'Nytt taggnamn' ),
-			'menu_name'         => __( 'Taggar' ),
-	);
-
-	$args = array(
-			'hierarchical'      => false,
-			'labels'            => $labels,
-			'show_ui'           => true,
-			'show_admin_column' => true,
-			'rewrite'           => array( 'slug' => 'tagg' ),
-	);
-
-	register_taxonomy( 'tagg', array( 'tavla' ), $args );
-}
-add_action( 'init', 'tavel_register_tagg_taxonomy' ); */
-
-
 
 function tavel_post_type() {
 

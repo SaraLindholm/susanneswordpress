@@ -29,12 +29,6 @@ get_header(); ?>
       ?>
     </ul>
 
-<!-- Visa antal sidor för felsökning -->
-<?php
-  global $wp_query;
-  echo '<p>Antal sidor: ' . $wp_query->max_num_pages . '</p>';
-  ?>
-
 
   <section class="tavlor-tagg-container">
   <div class="tavlor-wrapper">

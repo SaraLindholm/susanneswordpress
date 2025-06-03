@@ -7,7 +7,6 @@ get_header(); ?>
 <div id="blog-page">
 
 
-
 <section id="blog-container">
   <div class="row">
   <div id="primary" class="col-xs-12 col-md-9 offset-md-1">
