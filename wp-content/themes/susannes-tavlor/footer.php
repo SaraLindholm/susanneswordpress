@@ -1,22 +1,23 @@
 <footer id="footer">
 
 
-<section class="footer-contact">
-  <div class="contact">
-    <p>Kontakt</p>
+  <section class="footer-contact">
 
-  </div>
-  <div class="contact">
-    <p>Instagram</p>
 
-  </div>
+    <a href="<?php echo home_url('/kontakt'); ?>">Kontakt<i class="bi bi-envelope"></i></a>
+    <a href="https://www.instagram.com/artbysusanne25/" target="_blank"> Instagram<i class="bi bi-instagram"></i></a>
+    <a href="#" target="_blank"> Facebook<i class="bi bi-facebook"></i></a>
+    <a href="#" target="_blank"> Twitter<i class="bi bi-twitter"></i></a>
 
-</section>
+
+
+
+  </section>
 
   <section id="copyright">
-    <div>
-      <h6>ArtBySusanne25 &copy; <?php echo date('Y'); ?></h6>
-    </div>
+
+    <h6>Susannes Tavlor &copy; <?php echo date('Y'); ?></h6>
+
   </section>
 
 </footer>

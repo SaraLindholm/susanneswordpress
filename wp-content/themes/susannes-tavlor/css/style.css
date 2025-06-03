@@ -9,16 +9,19 @@ html,
 body {
   height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+
   margin: 0 auto;
-  font-family: Roboto;
+  padding: 0;
+  background-color: #fff6ed;
+  font-family: Monterrat, Rubik, sans-serif;
   font-size: large;
 }
 
+main{flex: 1;}
 
-body {
-  background-color: #f6f5f2;
-  font-family: Rubik;
-}
+
 
 a {
   color: black;
@@ -39,8 +42,8 @@ h1,
 h2,
 h3,
 h4,
-h5,
-h6 {
+h5
+ {
  font-family: Rubik;
 }
 
@@ -56,7 +59,7 @@ label {
 ------------------------------------------------------------------ */
 
 #wrap {
-  background-color: #A7C0D4;
+  background-color: #b2c2a7;
   width: 100%;
   padding-bottom: 10px;
 
@@ -74,15 +77,14 @@ label {
   list-style: none; /* Ta bort punkter från listan */
   text-transform: uppercase;
   display: flex;
-  color: 	#4A4A4A;
-
   flex-direction: row; /* Gör så att länkarna ligger på rad */
   align-items: center;
   justify-content: flex-start;
   gap: 1rem; /* Mellanrum mellan länkar */
 }
 #menu-navbar a {
-    color: 	#4A4A4A; }
+    color: 	#4A4A4A;
+  font-size: 1rem; }
 
 
 
@@ -174,12 +176,15 @@ a:link {
 
 .page-text{
   width: 70%;
-  padding: 20px
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
 }
 
 .page-image {
-  background-color: blue;
 
 width: 30%;
 height: 100%;
@@ -232,7 +237,7 @@ display: flex;
 }
 
 article.blogg-post {
-  background-color: #E1E8ED;
+  background-color: #cbcfb5;
   border: solid 1px #ccc;
   padding: 20px;
   position: relative;
@@ -296,14 +301,9 @@ article .title {
   border-radius: 6px;
   font-family:  Playfair Display;
   font-size: 1rem;
-/*   background-color: #f3f3f3;
-  color: #333;
-  transition: 0.2s ease ;*/
+
 }
-/* .category-meny li {
-flex-direction: column;
-}
- */
+
 .category-meny li a:hover {
   background-color: #E08253;
 }
@@ -338,23 +338,27 @@ flex-direction: column;
 }
 
 article.tavla-archive {
-  background-color: #E1E8ED;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+ /*  background-color: #E1E8ED; */
+ background-color: #3a2937;
   border: solid 1px #ccc;
   padding: 20px;
   position: relative;
   max-width: 90%;
+  min-width: 290px;
   margin: 0 auto;
   margin-bottom: 30px;
 }
 
 .tavlor-wrapper article {
   margin: 20px;
-  background-color: #E1E8ED;
+  background-color: #dedfda;
+/*  background-color: #cbcfb5; */
 }
 
 
 article.tavla-archive img {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+ /*  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4); */
   margin-bottom: 30px;
   max-height: 225px;
   max-width: 250px;
@@ -385,17 +389,14 @@ article .title {
 }
 
 
- .btn-view-tavla:hover,
+/*  .btn-view-tavla:hover,
  .btn-view-tavla:active {
 
-  background-color: rgb(75, 72, 72);
-}
+  background-color: #E08253;
+} */
 /* Tavla arkiv */
 
-/* #E1E8ED för bakgrund på tavlan
-#A7C0D4 för header och footer
-#E08253 för aktiva knappar
-*/
+
 
 /*------------------------------------------Single Tavla */
 
@@ -418,7 +419,7 @@ article .title {
   display: flex;
   width: 100%;
   justify-content: center;
-  background-color: #E08253;
+  background-color: #b2c2a7;
   border-radius: 5px;
   padding: 10px 20px;
  }
@@ -438,7 +439,8 @@ article .title {
 
 
  .button-wrapper:hover {
-  background-color: rgb(75, 72, 72);
+
+  background-color: #E08253;
 }
 
 
@@ -455,7 +457,7 @@ article .title {
  .btn-buy-tavla:hover,
  .btn-buy-tavla:active {
   color:white;
-  background-color: rgb(75, 72, 72);
+  background-color: #E08253;
 }
 
 
@@ -500,8 +502,8 @@ article .title {
 
 #image {
   width: 100%;
-  height: auto;
-  background-color: #d4c6af93;
+  min-height: 250px;;
+
 }
 
 #image img {
@@ -616,63 +618,53 @@ article .title {
 
 /* Footer styles
 ------------------------------------------------------------------ */
-
 #footer {
   padding: 10px 0;
-  background-color: #A7C0D4;
+  background-color: #b2c2a7;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 
 .footer-contact {
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
-  width: 100%;
+  gap: 1.5rem;
   padding: 1rem 2rem;
+  width: 100%;
   box-sizing: border-box;
 }
 
-/* Enskilda kort */
-.footer-contact .contact {
-  width: 150px;
-  text-align: center;
-  font-family: Karla, sans-serif;
+.footer-contact a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.footer-contact a:hover {
+  color: #555; /* valfri hoverfärg */
 }
 
 #copyright {
   margin-top: 10px;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
-
 
 @media (max-width: 600px) {
 
-#footer {
-  padding: 10px 0;
-  background-color: #d2f0ff;
-  width: 100%;
-  display: flex;
-  height: 450px;
-  align-items: center;
-}
 
-.footer-contact {
-  flex-direction: column;
-  align-items: center;
-}
-
-.footer-contact .contact {
-  width: 100%;
-  max-width: 300px;
-}
-
+  .footer-contact {
+    flex-direction: column;
+    align-items: center;
+  }
 }
