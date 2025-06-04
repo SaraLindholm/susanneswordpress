@@ -30,29 +30,30 @@ get_header(); ?>
     </ul>
 
 
-  <section class="tavlor-tagg-container">
-  <div class="tavlor-wrapper">
-    <?php while ( have_posts() ) : the_post(); ?>
-    <article class="tavla-archive">
-    <?php
+    <section class="tavlor-container">
+      <div class="tavlor-wrapper">
+        <?php while (have_posts()) : the_post(); ?>
+          <article class="tavla-archive">
+
+            <?php
             $tillganglighet = get_field('tillganglighet');
             $matt = get_field('matt');
             $pris = get_field('pris');
             ?>
 
-            <div id="imageTODO">
-              <!-- fixa korrekt styling för bild här me bla skugga -->
-              <?php if (has_post_thumbnail()) {?>
-                <img class="rounded" src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title(); ?>"><?php
+            <div id="image">
 
-              } ?>
+              <?php if (has_post_thumbnail()) { ?>
+                <img class="rounded" src="<?php the_post_thumbnail_url('medium'); ?>"
+                  alt="<?php the_title(); ?>"><?php
+
+                                            } ?>
             </div>
-            <h3><?php the_title(); ?></h3>
+            <h4><?php the_title(); ?></h4>
 
             <?php if ($matt): ?>
               <p><strong>Mått: </strong><?= esc_html($matt); ?>
               <?php endif; ?></p>
-
               <div class="rea-wrapper">
                 <?php if ($rea): ?>
                   <!-- Om det finns ett REA-pris -->
@@ -63,47 +64,53 @@ get_header(); ?>
                   <p><b>Pris: <?= esc_html($pris); ?></b> SEK</p>
                 <?php endif; ?>
               </div>
+              <?php if ($tillganglighet): ?>
+                <div class="tillganglighet-status">
+                  <?php
+                  $color = '';
+                  $label = '';
 
-
-                <?php if ($tillganglighet): ?>
-                  <div class="tillganglighet-status">
-                    <?php
-                    $color = '';
-                    $label = '';
-
-                    switch ($tillganglighet) {
-                      case 'Såld':
-                        $color = 'red';
-                        $label = 'Såld';
-                        break;
-                      case 'Reserverad':
-                        $color = 'yellow';
-                        $label = 'Reserverad';
-                        break;
-                      default:
-                        $color = 'green';
-                        $label = esc_html($tillganglighet); // fallback
-                        break;
-                    }
-                    ?>
-                    <p><strong>Status: </strong><span class="status-dot" style="background-color: <?= $color; ?>;"></span>
-                      <span><?= $label; ?></span>
-                    </p>
-                  </div>
-                <?php endif; ?>
-
-
-
-                <div class="button-wrapper">
-                <a href="<?php the_permalink(); ?>" class="btn-view-tavla" id="button">TILL TAVLAN</a></div>
+                  switch ($tillganglighet) {
+                    case 'Såld':
+                      $color = 'red';
+                      $label = 'Såld';
+                      break;
+                    case 'Reserverad':
+                      $color = 'yellow';
+                      $label = 'Reserverad';
+                      break;
+                    default:
+                      $color = 'green';
+                      $label = esc_html($tillganglighet); // fallback
+                      break;
+                  }
+                  ?>
+                  <p><strong>Status: </strong><span class="status-dot" style="background-color: <?= $color; ?>;"></span>
+                    <span><?= $label; ?></span>
+                  </p>
+                </div>
+              <?php endif; ?>
 
 
 
 
-    </article>
+              <div class="button-wrapper">
+                <a href="<?php the_permalink(); ?>" class="btn-view-tavla" id="button">TILL TAVLAN</a>
+              </div>
 
-    <?php endwhile; ?>
-    </div>
+          </article>
+        <?php endwhile; ?>
+
+      </div>
+    </section>
+
+  <?php
+  else :
+    echo '<p>Inga konstverk hittades.</p>';
+  endif;
+
+  // Återställ postdata
+  wp_reset_postdata();?>
  <!-- Pagination -->
  <nav class="pagination" aria-label="Sidonumrering för inlägg">
       <?php
@@ -115,14 +122,6 @@ get_header(); ?>
       ?>
     </nav>
 
-</section>
-<?php else : ?>
-  <p>Inga tavlor hittades under denna kategori.</p>
-<?php endif; ?>
-
-<?php
-  wp_reset_postdata();
-  ?>
 </main>
 
 

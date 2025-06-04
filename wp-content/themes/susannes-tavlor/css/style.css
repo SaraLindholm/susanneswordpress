@@ -80,10 +80,9 @@ label {
   flex-direction: row; /* Gör så att länkarna ligger på rad */
   align-items: center;
   justify-content: flex-start;
-  gap: 1rem; /* Mellanrum mellan länkar */
+  gap: 20px /* Mellanrum mellan länkar */
 }
 #menu-navbar a {
-    color: 	#4A4A4A;
   font-size: 1rem; }
 
 
@@ -339,7 +338,6 @@ article .title {
 
 article.tavla-archive {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
- /*  background-color: #E1E8ED; */
  background-color: #3a2937;
   border: solid 1px #ccc;
   padding: 20px;
@@ -410,7 +408,15 @@ article .title {
 }
 .red {
   color: red;
+}
 
+#link_category {
+  display: flex;
+  justify-content: space-between;
+
+  margin: 0 auto;
+  width: 100%;
+  padding-bottom: 20px;
 }
 
  .button-wrapper{
@@ -439,7 +445,6 @@ article .title {
 
 
  .button-wrapper:hover {
-
   background-color: #E08253;
 }
 
@@ -466,7 +471,12 @@ article .title {
   width: 80%;
   height: 100%;
   display: flex;
+}
 
+.rea-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 #section-left {
@@ -496,8 +506,8 @@ article .title {
   border: solid 1px #ccc;
   padding: 20px;
   position: relative;
-  max-width: 90%;
-  width: auto;
+  width: 90%;
+
 }
 
 #image {
@@ -527,6 +537,14 @@ article .title {
     width: 100%;
 
   }
+
+  .tavla{
+    width: 100%;
+
+
+
+  }
+
   #image img {
     width: 100%;
     height: auto;

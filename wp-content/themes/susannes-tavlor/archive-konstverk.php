@@ -5,7 +5,7 @@ get_header(); ?>
 
 <main>
 
-
+whaaaat
   <h2>Galleri</h2>
 
   <?php
@@ -56,21 +56,23 @@ get_header(); ?>
 
                                             } ?>
             </div>
-            <h3><?php the_title(); ?></h3>
+            <h4><?php the_title(); ?></h4>
 
             <?php if ($matt): ?>
               <p><strong>Mått: </strong><?= esc_html($matt); ?>
               <?php endif; ?></p>
+
+
               <div class="rea-wrapper">
                 <?php if ($rea): ?>
                   <!-- Om det finns ett REA-pris -->
-                  <p class="red"><del>SEK <?= esc_html($pris); ?></del></p>
-                  <p>Nytt Pris: <?= esc_html($rea); ?> SEK</p>
+                  <p><del class="red">Pris: <?= esc_html($pris); ?>SEK </del> Nytt Pris: <?= esc_html($rea); ?> SEK</p>
                 <?php else: ?>
                   <!-- Om det INTE finns ett REA-pris -->
                   <p><b>Pris: <?= esc_html($pris); ?></b> SEK</p>
                 <?php endif; ?>
               </div>
+
               <?php if ($tillganglighet): ?>
                 <div class="tillganglighet-status">
                   <?php
@@ -97,7 +99,7 @@ get_header(); ?>
                   </p>
                 </div>
               <?php endif; ?>
-              <h6><?php the_time('F j, Y'); ?></h6> <!-- // Skriver ut datumet när tavlan målades  -->
+
 
 
 
