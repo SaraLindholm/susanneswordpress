@@ -19,9 +19,9 @@ body {
   font-size: large;
 }
 
-main{flex: 1;}
-
-
+main {
+  flex: 1;
+}
 
 a {
   color: black;
@@ -42,9 +42,8 @@ h1,
 h2,
 h3,
 h4,
-h5
- {
- font-family: Rubik;
+h5 {
+  font-family: Rubik;
 }
 
 h1 {
@@ -62,10 +61,9 @@ label {
   background-color: #b2c2a7;
   width: 100%;
   padding-bottom: 10px;
-
 }
 
- .logo {
+.logo {
   font-size: 2.2rem;
   line-height: 70px;
   font-family: karla;
@@ -73,26 +71,24 @@ label {
 
 /* utan mediaquery */
 #menu-navbar {
-/*   background-color: rgb(255, 127, 159); */
+  /*   background-color: rgb(255, 127, 159); */
   list-style: none; /* Ta bort punkter från listan */
   text-transform: uppercase;
   display: flex;
   flex-direction: row; /* Gör så att länkarna ligger på rad */
   align-items: center;
   justify-content: flex-start;
-  gap: 20px /* Mellanrum mellan länkar */
+  gap: 20px; /* Mellanrum mellan länkar */
 }
 #menu-navbar a {
-  font-size: 1rem; }
-
-
+  font-size: 1rem;
+}
 
 @media (max-width: 768px) {
-
   .logo {
     font-size: 2.2rem;
     line-height: 70px;
-    font-family:  Playfair Display;
+    font-family: Playfair Display;
   }
   #menu-navbar {
     list-style: none; /* Ta bort punkter från listan */
@@ -102,25 +98,21 @@ label {
     flex-direction: column;
     justify-content: flex-start;
     gap: 0.1rem; /* Mellanrum mellan länkar */
-
   }
-
 }
-
 
 #menu-navbar > li {
   line-height: 40px;
   list-style: none;
-
   padding: 0 1px;
   text-decoration: none;
-  font-family:  Playfair Display;
+  font-family: Rubrik, Playfair Display;
   font-size: 1.3rem;
 }
 
 #menu-navbar > li.current-menu-item {
- /*  background-color: #E08253; */
- background-color: beige;
+  /*  background-color: #E08253; */
+  background-color: beige;
   border-radius: 3px;
 }
 
@@ -133,18 +125,15 @@ a:link {
   text-decoration: none;
 }
 
-#menu-navbar li a:hover {
-/*   color: darkred; */
-  background-color: #E08253;
-  border-radius: 3px;
-
+#menu-navbar li:hover {
+  cursor: pointer;
+  transform: scale(1.10);
+  transition: transform 0.3s ease;
 }
-
 
 
 /* Main styles
 ------------------------------------------------------------------ */
-
 
 /* Startsida
 --------------- */
@@ -159,8 +148,6 @@ a:link {
   justify-content: center;
   text-align: center;
   padding: 20px;
-
-
 }
 
 .page-inner {
@@ -169,34 +156,78 @@ a:link {
   height: 100%;
   display: flex;
   flex-direction: row;
-
-
 }
 
-.page-text{
+.page-text {
   width: 70%;
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
 }
 
 .page-image {
-
-width: 30%;
-height: 100%;
-display: flex;
-align-items: center;
-justify-content: center;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .page-image img {
   border-radius: 6%;
   max-width: 100%;
   height: auto;
+}
+
+
+
+@media (max-width: 600px) {
+  .page-content {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
   }
+
+
+.page-inner {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+  .page-text {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-image {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-image img {
+  border-radius: 6%;
+  max-width: 50%;
+  height: auto;
+}
+
+}
 /* Startsida
 --------------- */
 /* BLOGG
@@ -214,10 +245,9 @@ justify-content: center;
 }
 
 #hero-cloud {
-
-width: 30%;
-height: 30%;
-display: flex;
+  width: 30%;
+  height: 30%;
+  display: flex;
 }
 
 #cloud {
@@ -229,7 +259,7 @@ display: flex;
   align-items: center;
   width: 60%;
   height: 30%;
-  }
+}
 
 .blog-post {
   margin: 0 auto;
@@ -274,13 +304,11 @@ article .title {
 }
 
 /* finns både i bloggen men också på tavlor */
-  .wp-thumbnail {
+.wp-thumbnail {
   margin-top: 1rem;
   width: 150px;
   height: auto;
 }
-
-
 
 /*------------------------------------------Tavel arkiv/Tavel-taggar/kategori */
 
@@ -288,23 +316,23 @@ article .title {
   list-style: none;
   padding: 0;
   display: flex;
-  gap: 1rem;
   flex-wrap: wrap;
-
 }
-/* TODO fixa så menyn ser lite vettig ut */
+
 
 .category-meny li a {
   text-decoration: none;
+  text-transform: uppercase;
   padding: 6px 12px;
   border-radius: 6px;
-  font-family:  Playfair Display;
+  font-family: Rubrik, Playfair Display;
   font-size: 1rem;
-
 }
 
-.category-meny li a:hover {
-  background-color: #E08253;
+.category-meny li:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 
 /*  */
@@ -315,7 +343,6 @@ article .title {
   justify-content: center;
   margin: 0 auto;
   width: 100%;
-
 }
 
 .tavlor-tagg-container {
@@ -324,7 +351,6 @@ article .title {
   justify-content: center;
   margin: 0 auto;
   width: 100%;
-
 }
 
 .tavlor-wrapper {
@@ -337,9 +363,6 @@ article .title {
 }
 
 article.tavla-archive {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
- background-color: #3a2937;
-  border: solid 1px #ccc;
   padding: 20px;
   position: relative;
   max-width: 90%;
@@ -347,16 +370,17 @@ article.tavla-archive {
   margin: 0 auto;
   margin-bottom: 30px;
 }
-
-.tavlor-wrapper article {
-  margin: 20px;
-  background-color: #dedfda;
-/*  background-color: #cbcfb5; */
+article.tavla-archive:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 
 
+
+
 article.tavla-archive img {
- /*  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4); */
+
   margin-bottom: 30px;
   max-height: 225px;
   max-width: 250px;
@@ -381,20 +405,13 @@ article .title {
   gap: 0.3rem; /* Avstånd mellan ikon och text */
 }
 .wp-thumbnail {
-/*   margin-top: 1rem; */
+  /*   margin-top: 1rem; */
   width: 150px;
   height: auto;
 }
 
 
-/*  .btn-view-tavla:hover,
- .btn-view-tavla:active {
-
-  background-color: #E08253;
-} */
 /* Tavla arkiv */
-
-
 
 /*------------------------------------------Single Tavla */
 
@@ -412,14 +429,16 @@ article .title {
 
 #link_category {
   display: flex;
-  justify-content: space-between;
-
+  justify-content: space-around;
   margin: 0 auto;
   width: 100%;
   padding-bottom: 20px;
 }
+#category-list {
+ width: 100%;
+}
 
- .button-wrapper{
+.button-wrapper {
   margin: 0 auto;
   margin-top: 10px;
   display: flex;
@@ -428,9 +447,9 @@ article .title {
   background-color: #b2c2a7;
   border-radius: 5px;
   padding: 10px 20px;
- }
+}
 
- .disabled-button-wrapper{
+.disabled-button-wrapper {
   margin: 0 auto;
   margin-top: 10px;
   display: flex;
@@ -441,30 +460,26 @@ article .title {
   color: #666;
   border-radius: 5px;
   transition: background-color 0.3s ease;
- }
-
-
- .button-wrapper:hover {
-  background-color: #E08253;
 }
 
+.button-wrapper:hover {
+  background-color: #e08253;
+}
 
- .btn-buy-tavla.btn-view-tavla{
+.btn-buy-tavla.btn-view-tavla {
   font-family: Abyssinica SIL;
   font-size: 1rem;
- }
-
- .btn-buy-tavla.btn-view-tavla > a {
-
- font-weight: bold;
- }
-
- .btn-buy-tavla:hover,
- .btn-buy-tavla:active {
-  color:white;
-  background-color: #E08253;
 }
 
+.btn-buy-tavla.btn-view-tavla > a {
+  font-weight: bold;
+}
+
+.btn-buy-tavla:hover,
+.btn-buy-tavla:active {
+  color: white;
+  background-color: #e08253;
+}
 
 .tavla-wrapper {
   margin: 0 auto;
@@ -473,10 +488,10 @@ article .title {
   display: flex;
 }
 
-.rea-wrapper{
+.rea-wrapper {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 #section-left {
@@ -488,44 +503,42 @@ article .title {
   align-items: center;
 }
 
-
 #section-right {
   width: 50%;
   height: auto;
   padding: 20px;
   box-sizing: border-box;
   display: flex;
- justify-content: center;
+  justify-content: center;
   align-items: center;
-
 }
 
-.tavla{
+.tavla {
   margin-top: auto;
   margin-bottom: auto;
   border: solid 1px #ccc;
   padding: 20px;
   position: relative;
   width: 90%;
-
 }
 
 #image {
   width: 100%;
-  min-height: 250px;;
-
+  min-height: 225px;
 }
+
 
 #image img {
   width: 100%;
   height: auto;
   display: block;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  margin-bottom: 10px;
 }
-#section-right #content{
+#section-right #content {
   margin-top: 20px;
   margin-bottom: 20px;
-  border-bottom: solid #65635f67  2px;
+  border-bottom: solid #65635f67 2px;
 }
 @media (max-width: 600px) {
   .tavla-wrapper {
@@ -535,14 +548,10 @@ article .title {
   }
   #section-left {
     width: 100%;
-
   }
 
-  .tavla{
+  .tavla {
     width: 100%;
-
-
-
   }
 
   #image img {
@@ -555,38 +564,33 @@ article .title {
     width: 100%;
     box-sizing: border-box;
   }
-
 }
-@media (min-width:601px) and (max-width: 800px)
-{.tavla-wrapper {
-  width: 90%;
-}
+@media (min-width: 601px) and (max-width: 800px) {
+  .tavla-wrapper {
+    width: 90%;
+  }
 
-#section-left {
-  width: 50%;
-  padding: 1%;
-}
+  #section-left {
+    width: 50%;
+    padding: 1%;
+  }
 
-
-#section-right {
-  width: 50%;
-  padding: 1%;
-}
-
+  #section-right {
+    width: 50%;
+    padding: 1%;
+  }
 }
 /* Döljer fälten som visar tavlans ID och title */
 .hiddenForm {
   display: none;
 }
 
-
 /* Tavla
 
 /* ----------------------------------------------------Contact */
 
-.wpforms-132-field_6-container  {
+.wpforms-132-field_6-container {
   display: none;
-
 }
 
 .contact-form {
@@ -623,7 +627,7 @@ article .title {
 }
 
 .page-numbers.current {
-  background-color: #E08253;
+  background-color: #e082537c;
   font-weight: bold;
   padding: 3px 3px;
 }
@@ -679,8 +683,6 @@ article .title {
 }
 
 @media (max-width: 600px) {
-
-
   .footer-contact {
     flex-direction: column;
     align-items: center;

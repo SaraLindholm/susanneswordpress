@@ -13,15 +13,11 @@ add_action('after_setup_theme', 'susannes_tavlor_register_menus');
 function susannes_tavlor_setup () {
   add_theme_support('post-thumbnails');
   add_theme_support('title-tag');
+  add_theme_support('custom-logo');
 
   register_taxonomy_for_object_type('category', 'tavla'); // Ensure categories are available for 'tavla' post type
 }
 add_action('after_setup_theme', 'susannes_tavlor_setup');
-/* custom size  */
-function my_custom_image_size() {
-  add_image_size('super-large', 1400, 600, false); // false = inte beskära (crop)
-}
-add_action('after_setup_theme', 'my_custom_image_size');
 
 function tavel_filter_category_archive($query) {
   if ($query->is_main_query() && !is_admin() && is_category()) {

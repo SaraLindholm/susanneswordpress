@@ -16,14 +16,13 @@ get_header(); ?>
         <?php the_content(); ?>
       </section>
       <section class="page-image">
-        <?php the_post_thumbnail('super-large'); ?>
+        <?php the_post_thumbnail('large'); ?>
       </section>
     </section>
 
   <?php endwhile; endif; ?>
 </section>
 
-<!-- kolla up varför inte .page-image tar upp full höjd  -->
 
 
 </main>

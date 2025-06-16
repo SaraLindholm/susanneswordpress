@@ -4,8 +4,7 @@ get_header(); ?>
 
 <main>
 
-  <p>taxonomy-tavla_kategori.php?</p>
-  <h2>Kategorier: <?php single_term_title(); ?></h2>
+  <h3>Kategorier: <?php single_term_title(); ?></h3>
 
 
 
@@ -29,7 +28,6 @@ get_header(); ?>
       ?>
     </ul>
 
-
     <section class="tavlor-container">
       <div class="tavlor-wrapper">
         <?php while (have_posts()) : the_post(); ?>
@@ -42,28 +40,24 @@ get_header(); ?>
             ?>
 
             <div id="image">
+            <div>
+                <a href="<?php the_permalink(); ?>" class="btn-view-tavla" id="button">
+
 
               <?php if (has_post_thumbnail()) { ?>
                 <img class="rounded" src="<?php the_post_thumbnail_url('medium'); ?>"
                   alt="<?php the_title(); ?>"><?php
 
                                             } ?>
-            </div>
+                                            </a>
+          </div>
+          </div>
             <h4><?php the_title(); ?></h4>
 
             <?php if ($matt): ?>
               <p><strong>Mått: </strong><?= esc_html($matt); ?>
               <?php endif; ?></p>
-              <div class="rea-wrapper">
-                <?php if ($rea): ?>
-                  <!-- Om det finns ett REA-pris -->
-                  <p class="red"><del>SEK <?= esc_html($pris); ?></del></p>
-                  <p>Nytt Pris: <?= esc_html($rea); ?> SEK</p>
-                <?php else: ?>
-                  <!-- Om det INTE finns ett REA-pris -->
-                  <p><b>Pris: <?= esc_html($pris); ?></b> SEK</p>
-                <?php endif; ?>
-              </div>
+
               <?php if ($tillganglighet): ?>
                 <div class="tillganglighet-status">
                   <?php
@@ -85,7 +79,7 @@ get_header(); ?>
                       break;
                   }
                   ?>
-                  <p><strong>Status: </strong><span class="status-dot" style="background-color: <?= $color; ?>;"></span>
+                  <p><span class="status-dot" style="background-color: <?= $color; ?>;"></span>
                     <span><?= $label; ?></span>
                   </p>
                 </div>
@@ -93,16 +87,17 @@ get_header(); ?>
 
 
 
-
+<!--
               <div class="button-wrapper">
                 <a href="<?php the_permalink(); ?>" class="btn-view-tavla" id="button">TILL TAVLAN</a>
               </div>
-
+ -->
           </article>
         <?php endwhile; ?>
 
       </div>
     </section>
+
 
   <?php
   else :

@@ -8,7 +8,7 @@
     <section class="page-inner">
 
       <section class="page-image">
-        <?php the_post_thumbnail('super-large'); ?>
+        <?php the_post_thumbnail('large'); ?>
       </section>
       <section class="page-text">
       <h2><?php the_title(); ?></h2>

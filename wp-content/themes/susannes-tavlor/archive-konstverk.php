@@ -5,7 +5,6 @@ get_header(); ?>
 
 <main>
 
-whaaaat
   <h2>Galleri</h2>
 
   <?php
@@ -49,29 +48,23 @@ whaaaat
             ?>
 
             <div id="image">
+            <div>
+                <a href="<?php the_permalink(); ?>" class="btn-view-tavla" id="button">
+
 
               <?php if (has_post_thumbnail()) { ?>
                 <img class="rounded" src="<?php the_post_thumbnail_url('medium'); ?>"
                   alt="<?php the_title(); ?>"><?php
 
                                             } ?>
-            </div>
+                                            </a>
+          </div>
+          </div>
             <h4><?php the_title(); ?></h4>
 
             <?php if ($matt): ?>
               <p><strong>Mått: </strong><?= esc_html($matt); ?>
               <?php endif; ?></p>
-
-
-              <div class="rea-wrapper">
-                <?php if ($rea): ?>
-                  <!-- Om det finns ett REA-pris -->
-                  <p><del class="red">Pris: <?= esc_html($pris); ?>SEK </del> Nytt Pris: <?= esc_html($rea); ?> SEK</p>
-                <?php else: ?>
-                  <!-- Om det INTE finns ett REA-pris -->
-                  <p><b>Pris: <?= esc_html($pris); ?></b> SEK</p>
-                <?php endif; ?>
-              </div>
 
               <?php if ($tillganglighet): ?>
                 <div class="tillganglighet-status">
@@ -94,7 +87,7 @@ whaaaat
                       break;
                   }
                   ?>
-                  <p><strong>Status: </strong><span class="status-dot" style="background-color: <?= $color; ?>;"></span>
+                  <p><span class="status-dot" style="background-color: <?= $color; ?>;"></span>
                     <span><?= $label; ?></span>
                   </p>
                 </div>
@@ -102,11 +95,11 @@ whaaaat
 
 
 
-
+<!--
               <div class="button-wrapper">
                 <a href="<?php the_permalink(); ?>" class="btn-view-tavla" id="button">TILL TAVLAN</a>
               </div>
-
+ -->
           </article>
         <?php endwhile; ?>
 
